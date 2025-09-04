@@ -1,0 +1,86 @@
+# MedCOD: Improving Medical Translation with Structured Knowledge
+
+---
+
+## Abstract
+This paper introduces **MedCOD**, a new hybrid framework designed to enhance English-to-Spanish medical translation using Large Language Models (LLMs). MedCOD tackles the challenge of accurately translating complex medical text by combining structured domain knowledge from two sources: the **Unified Medical Language System (UMLS)** and an **LLM-as-Knowledge-Base (LLM-KB)**. This structured knowledge, which includes multilingual term variants, synonyms, and definitions, is integrated into the translation process through sophisticated prompting and fine-tuning. Experiments on a parallel corpus of MedlinePlus articles show that MedCOD significantly improves translation quality across various open-source LLMs. For example, a fine-tuned Phi-4 model with MedCOD surpassed proprietary models like GPT-40 and GPT-40-mini in key translation metrics, demonstrating the framework's effectiveness in producing accurate, clinically sound translations.
+
+---
+
+## Problem Statement
+The lack of effective and accurate machine translation systems for medical text creates a significant language barrier in healthcare, particularly for patients with Limited English Proficiency (LEP). In the U.S., a large portion of the LEP population is Hispanic, and language barriers have been shown to negatively impact healthcare access, medication adherence, and health outcomes. While traditional and neural machine translation (NMT) systems exist, they often struggle with specialized medical terminology and maintaining clinical accuracy, especially in long or complex sentences. Although Large Language Models (LLMs) show promise in general translation, their potential for translating biomedical texts, such as electronic health records (EHRs), remains underexplored.
+
+---
+
+## Objectives
+- To develop a novel framework, **MedCOD**, that enhances English-to-Spanish medical translation by integrating structured domain-specific knowledge into LLMs.
+- To use both the **Unified Medical Language System (UMLS)** and an **LLM-as-Knowledge-Base (LLM-KB)** to enrich LLMs with multilingual term mappings, synonyms, and dictionary-based translations.
+- To systematically evaluate multiple open-source LLMs, such as Phi-4 and Qwen2.5, using MedCOD to see if they can match or exceed the performance of proprietary models.
+- To demonstrate that the combination of structured prompting and lightweight fine-tuning is more effective than either approach alone for high-quality medical translation.
+
+---
+
+## Methodology
+The MedCOD framework is a multi-stage process that combines structured knowledge and fine-tuning to improve translation. 
+1.  **Data Preparation**: A parallel corpus of 2,999 English-Spanish articles from the NIH's MedlinePlus website was used. This resulted in a training set of 143,760 sentences and a test set of 100 sentences, which were manually selected by domain experts to ensure a balanced distribution of sentence lengths. The MedlinePlus content is considered a practical proxy for clinical text in translation tasks.
+
+2.  **Knowledge Enrichment**: Medical keywords were extracted from the test sentences. The framework used two knowledge sources to enrich these concepts:
+    * **LLM-as-Knowledge-Base (LLM-KB)**: This uses a powerful LLM (GPT-40-mini) to retrieve structured medical knowledge, including multilingual translations and synonyms for medical terms.
+    * **Unified Medical Language System (UMLS)**: An external database that provides translation dictionaries for medical concepts.
+
+3.  **Prompting and Fine-Tuning**: The enriched knowledge was used to create three types of structured prompts: multilingual translations, synonyms, and UMLS-based dictionaries. These were compared against general prompts. The open-source models were also fine-tuned using the lightweight **LoRA (Low-Rank Adaptation)** technique, which significantly reduces the number of trainable parameters, making the process faster and more memory-efficient.
+
+4.  **Evaluation**: The performance of the models was measured using three metrics: **SacreBLEU** (word-level similarity), **ChrF++** (character-level similarity), and **COMET** (semantic adequacy and fluency, which is based on human judgments).
+
+---
+
+## Key Findings
+- **Superior Performance**: The MedCOD framework, when combined with fine-tuning, significantly improved the translation quality of all tested open-source LLMs. The Phi-4 model, in particular, achieved a BLEU score of 44.23, a chrF++ of 28.91, and a COMET score of 0.863. These scores surpassed those of strong baseline models, including GPT-40 and GPT-40-mini.
+- **Complementary Components**: The study's ablation analysis confirmed that both structured prompting with MedCOD and fine-tuning independently enhance performance. However, their combination consistently yielded the highest improvements across all models and metrics.
+- **Qualitative Accuracy**: A qualitative analysis showed that the MedCOD-enhanced Phi-4 model produced more medically accurate and professionally phrased translations than GPT-40, despite some minor grammatical errors. For example, it correctly used "sistema inmunitario" instead of "sistema inmunológico" and "dificultad para respirar" instead of "falta de aliento".
+- **Optimal Prompting Strategy**: Multilingual translation prompts generally performed the best, but the optimal prompting strategy varied depending on the specific LLM and whether it was fine-tuned or not.
+
+---
+
+## Contributions
+- The **MedCOD framework**, a novel hybrid approach that combines structured prompting with lightweight fine-tuning to improve English-to-Spanish medical translation.
+- A demonstration that open-source LLMs, when enriched with domain-specific knowledge, can perform as well as or better than proprietary systems like GPT-40.
+- The use of a parallel corpus derived from MedlinePlus articles, which serves as a valuable resource for medical translation tasks.
+
+---
+
+## Applications
+- MedCOD can be used to improve **cross-lingual health communication** for underrepresented populations, particularly for Spanish-speaking patients with limited English proficiency.
+- The framework can be applied to translate medical documents such as **Electronic Health Records (EHRs)**, patient education materials, and clinical notes, improving patient-provider communication and health outcomes.
+- The methodology can be extended to other high-stakes domains beyond medicine where precision and contextual accuracy are critical.
+
+---
+
+## Limitations
+- The dataset used is derived exclusively from MedlinePlus articles, which may not fully represent the linguistic diversity and complexity of other clinical documents like progress notes or discharge summaries.
+- The study focuses solely on English-to-Spanish translation, and the framework's adaptability to other language pairs with varying resource availability and morphological differences has not yet been evaluated.
+- The knowledge sources used (UMLS and LLM-KB) have limitations and may not contain emerging medical concepts or context-dependent expressions.
+- The evaluation metrics used (BLEU, ChrF++, COMET) may not fully capture the clinical usability of the translations, as they focus on surface similarity and semantic adequacy rather than real-world application.
+
+---
+
+## Future Directions
+- Future research should explore expanding the evaluation to task-specific settings, such as **cross-lingual question answering** or **information extraction**, to provide more application-aligned assessments.
+- The framework's adaptability to other language pairs, especially low-resource ones, needs to be evaluated.
+- Integrating curated medical glossaries with formality tags or using reinforcement learning with fine-grained human feedback could help reduce errors related to grammatical gender, term disambiguation, and register control.
+- Optimizations to address the computational overhead of the MedCOD pipeline, such as caching and lightweight term retrieval, should be explored.
+
+---
+
+## Keywords
+- Large Language Models (LLMs)
+- Machine Translation
+- Medical Translation
+- Unified Medical Language System (UMLS)
+- LLM-as-Knowledge-Base (LLM-KB)
+- Retrieval-Augmented Generation (RAG)
+- Fine-tuning
+- Low-Rank Adaptation (LoRA)
+- Perplexity
+- EHR
+- COMET

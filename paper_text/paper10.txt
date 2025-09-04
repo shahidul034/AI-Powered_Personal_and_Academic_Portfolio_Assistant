@@ -1,0 +1,91 @@
+# Gold Standard Dataset for Evaluating Bangla Stemming Algorithms
+
+---
+
+## Abstract
+This paper addresses the challenge of accurately stemming words in the Bangla language for natural language processing (NLP) tasks. The authors highlight that a major obstacle to developing effective Bangla stemmers is the lack of a standardized, high-quality dataset for evaluation. To fill this gap, the paper presents a **"gold standard" dataset corpus** specifically designed to test the accuracy of stemming algorithms. This corpus was generated based on a summary of rules derived from an analysis of Bangla grammar, focusing on suffixes related to verbs, nouns, and pronouns. The research team used this new corpus to test existing Bangla stemming algorithms and found that their performance was significantly different when evaluated against this new standard.
+
+---
+
+## Problem Statement
+Stemming is a critical preprocessing step in natural language processing (NLP) that involves reducing inflected words to their root or stem form. For a language like Bangla, which has complex inflectional morphology, developing an effective stemming algorithm is challenging. The primary issues are: 1) the difficulty in collecting a comprehensive set of rules for Bangla stemming, and 2) the absence of a standardized, reliable dataset (a "gold standard" corpus) to evaluate the performance of stemming algorithms. Without a benchmark dataset, it is difficult to accurately measure and compare the effectiveness of different Bangla stemmers, hindering the improvement of NLP applications that rely on them.
+
+---
+
+## Objectives
+- To develop a summary of rules associated with Bangla stemming by analyzing its grammatical structure.
+- To create a **"gold standard" dataset corpus** that can be used to effectively test and evaluate the accuracy of existing and future Bangla stemming algorithms.
+- To use this new corpus to evaluate the performance of several existing Bangla stemming algorithms.
+- To demonstrate that evaluating stemmers with this new corpus yields different and more accurate results compared to existing techniques.
+
+---
+
+## Methodology
+The researchers developed a rule-based methodology to generate the gold standard corpus for Bangla stemming.
+
+1.  **Grammar Analysis and Rule Identification**: The first step was a detailed analysis of Bangla grammar to identify the most common suffixes. The paper notes that a majority of suffixes are associated with verbs (ক্রিয়া বিভক্তি), numbers (বচন), nouns (বিশেষ্য), and pronouns. Examples of verb suffixes (e.g., ছে, কিয়েছ) and number suffixes (e.g., বৃন্দ, মন্ডলী) are provided.
+
+2.  **Corpus Generation**: Based on the identified suffixes, a corpus of inflected Bangla words and their corresponding root forms was generated. This corpus serves as the "gold standard" dataset for evaluation. The paper provides examples of how certain suffixes (e.g., `গুলোতে` → `_` or `পানো` → `_`) are removed to produce the root word.
+
+3.  **Stemming Process**: The stemming process itself is described as a series of steps:
+    - **Tokenization**: An input sentence or paragraph is first tokenized into individual words.
+    - **Stop Word Removal**: Common Bangla stop words (e.g., অবশ্য, অনেকে) are removed.
+    - **Suffix Stripping**: The algorithm checks for and removes suffixes, prioritizing plural suffixes (বচন) and then verbal inflections (ক্রিয়া বিভক্তি). An extra set of rules is used to handle exceptional cases.
+    - **Final Output**: The result is a paragraph or sentence without inflections.
+
+4.  **Performance Analysis**: The new corpus was used to evaluate several existing Bangla stemming algorithms, including Rafi Kamal Stemmer (S1), Sazid Islam Stemmer (S2), and the authors' own proposed stemmer (S3). Key metrics for comparison included:
+    - **Right Stemmed**: The number of words correctly stemmed.
+    - **Wrong from Candidate Stemmed**: The number of words that were candidates for stemming but were incorrectly stemmed.
+    - **Need to Stem**: Words that should have been stemmed but were not.
+    - **Wrong Stemmed**: The total number of words incorrectly stemmed from both candidate and non-candidate words.
+
+---
+
+## Key Findings
+- The paper successfully created a rule-based gold standard corpus for Bangla stemming, which contains **316 total sentences** and **1086 words**.
+- A key finding from the evaluation was that existing stemmers performed differently when tested against this new, more comprehensive corpus.
+- For example, the proposed stemmer (S3) correctly stemmed **180** words, compared to 125 for S1 and 129 for S2. It also had fewer words that "needed to be stemmed" but were not (65 for S3 vs. 126 and 155 for S1 and S2, respectively).
+- The study concludes that the developed corpus has a variety of inflected words that existing stemmers do not handle well.
+
+---
+
+## Contributions
+- The creation of a **gold standard dataset corpus** for the evaluation of Bangla stemming algorithms, addressing a significant gap in Bangla NLP research.
+- A summary of grammatical rules for Bangla stemming, which can serve as a guide for developing new and improved stemmers.
+- A comprehensive evaluation of several existing Bangla stemmers using this new corpus, providing a more accurate benchmark of their performance.
+- The corpus and its associated rules are publicly available, enabling other researchers to validate and improve their own stemming algorithms.
+
+---
+
+## Applications
+- The gold standard corpus can be used by researchers to evaluate the accuracy and efficiency of any new Bangla stemming algorithm.
+- The stemming rules and methodology can be applied to various NLP applications, such as:
+    - **Text mining** and sentiment analysis.
+    - **Information retrieval** and web search engines.
+    - **Spell checking** and parse design.
+    - **Spam filters**.
+
+---
+
+## Limitations
+- The paper primarily focuses on rule-based stemming and does not extensively compare its approach with corpus-based stemming, which can be faster and more accurate if a large, complete dataset is available.
+- The rule-based approach can be complex and may not account for all possible inflections and exceptions in the Bangla language.
+
+---
+
+## Future Directions
+- The authors believe the corpus can be useful for researchers in text mining, emotion mining, and parser design for the Bangla language.
+- The corpus could also be adapted for use in the design of "parallel stemmers" with minor modifications.
+
+---
+
+## Keywords
+- NLP
+- Stemmer
+- Lemmatizer
+- Corpus
+- Sentiment analysis
+- Spell checker
+- Bangla
+- Rule-based stemming
+- Text normalization

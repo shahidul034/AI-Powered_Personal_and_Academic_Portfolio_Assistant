@@ -1,0 +1,85 @@
+# LLM-Based Chatbot Builder for Question Answering
+
+---
+
+## Abstract
+This paper introduces a web application called the **LLM QA Chatbot Builder**, designed to simplify the development of custom, domain-specific chatbots for question-answering tasks. It streamlines the entire process, from data collection and model fine-tuning to testing, human evaluation, and deployment, making it accessible to both technical and non-technical users. The software supports the fine-tuning of several popular open-source Large Language Models (LLMs) such as **Zepyhr, Mistral, Llama-3, Phi, and Flan-T5**. It incorporates a **Retrieval Augmented Generation (RAG)** system, including an automatic web crawling tool to scrape data for RAG. The builder also features a **human evaluation interface** for assessing model quality, which the authors claim is a more reliable method than current automated metrics. The tool's ability to use quantization techniques makes it feasible to run on consumer-level hardware, broadening its accessibility.
+
+---
+
+## Problem Statement
+Developing an intelligent chatbot for question-answering using LLMs is a complex, multi-stage process that includes data collection, fine-tuning, testing, and deployment. This complexity presents a significant barrier for many users, particularly those who lack programming expertise or access to powerful computational resources. Existing tools often have limitations, such as requiring paid API keys, lacking features for collecting user-provided data, or only supporting a single stage of the development process. Furthermore, a reliable method for evaluating LLM performance, beyond biased automated metrics, is needed. There is no single, free, and open-source framework that combines all these steps into a user-friendly, end-to-end solution for building a custom QA chatbot.
+
+---
+
+## Objectives
+- To create a comprehensive, user-friendly **web application** that simplifies the entire LLM QA chatbot development pipeline.
+- To enable both technical and non-technical users to build custom chatbots without programming knowledge.
+- To integrate key functionalities such as **data collection**, **LLM fine-tuning**, and a customizable **Retrieval Augmented Generation (RAG)** system.
+- To include a **human evaluation feature** to provide a more reliable assessment of model performance.
+- To offer a solution that is efficient for low-resource consumer PCs by using quantization techniques to reduce computational load.
+
+---
+
+## Methodology
+The LLM QA Chatbot Builder is a web application with six main functionalities, accessible through different tabs in the user interface.
+
+1.  **Data Collection**: Users can manually upload training and testing data via Excel or CSV files. For RAG data, the system includes an automatic web crawler that scrapes data from a specified website link and saves it as a file. The application also provides an interface for collecting data from multiple users, saving questions, answers, ground truths, and contexts.
+
+2.  **Fine-tuning**: This tab allows users to fine-tune selected LLMs from a pre-defined list that includes Mistral, Zepyhr, Llama-3, Phi, and Flan-T5. Users can also provide a custom model. The software uses **quantization techniques** to reduce memory usage, making it possible to train models on lower-end consumer GPUs. A HuggingFace token is required to access the models. Technical users have the option to edit the code directly to change parameters.
+
+3.  **Testing Data Generation and RAG Customization**: This feature allows users to generate answers from their fine-tuned models for a test dataset. It also provides options to customize RAG settings, such as data chunking parameters and the embedding model used. To evaluate RAG performance, the tool incorporates metrics like answer correctness, faithfulness, and context precision, alongside human evaluation. The system uses an ensemble of `bge-large-en-v1.5` and `ColBERT` for text embedding.
+
+4.  **Human Evaluation**: A dedicated tab allows human evaluators to rate a model's answers on a scale from 1 to 5. Each evaluator is given a unique token, and their ratings are saved in separate Excel files. This feature helps overcome the biases and poor correlation seen in automated evaluation metrics like GPT-4 and ROUGE-L.
+
+5.  **Inference**: Users can configure the inference process, including selecting the LLM, embedding model, and RAG parameters. The system uses a chat interface to allow users to interact with the model, which provides responses based on the RAG framework.
+
+6.  **Deployment**: In the final tab, users can deploy their fine-tuned model by providing a model name. The system generates the necessary deployment code, including a `requirements.txt` file for dependencies, enabling users to deploy the model with a simple command.
+
+---
+
+## Key Findings
+- The software provides a comprehensive, **end-to-end framework** for building LLM-based QA chatbots, from data collection to deployment.
+- The inclusion of **quantization techniques** makes it possible for users with consumer-level PCs to train and run models that would normally require significant computational power.
+- The automatic web crawling feature for RAG data collection significantly reduces the time and effort required for data preparation.
+- The human evaluation interface offers a valuable, more reliable alternative to automated metrics, which have shown biases and poor correlation with human judgment.
+
+---
+
+## Contributions
+- A novel, open-source web application that streamlines the entire LLM QA chatbot development process, making it accessible to a wide range of users, including those with no programming background.
+- An integrated **Retrieval Augmented Generation (RAG)** builder with an automatic web crawler for data scraping, simplifying a critical, often difficult, step.
+- A **human-centric evaluation system** that provides a more accurate assessment of model performance than traditional automated metrics.
+- The software's ability to run on low-resource hardware, thanks to quantization, democratizes the development of advanced chatbots, which was previously a barrier to entry.
+
+---
+
+## Applications
+- **Organizational Chatbots**: Small businesses and academic institutions can use the tool to create chatbots that answer questions based on their specific documents or websites.
+- **Research and Development**: Researchers can use the software to easily test and benchmark the performance of new LLMs and datasets.
+- **Educational Purposes**: The tool can be used to teach students the full pipeline of building an LLM-based application.
+
+---
+
+## Limitations
+- While the software makes the process easier, the quality of the final chatbot is still highly dependent on the quality and quantity of the data provided by the user.
+- The training of some of the included models, like Mistral, Zephyr, and Llama-3, still requires a considerable amount of VRAM (24 GB) for training and 16 GB for inference.
+
+---
+
+## Future Directions
+- Ongoing development will continue to integrate the latest high-performance LLMs from platforms like Hugging Face.
+- Future updates will enable users to seamlessly test and incorporate new advancements into their projects.
+
+---
+
+## Keywords
+- LLM
+- Chatbot
+- Retrieval augmented generation
+- Question Answering
+- Fine-tuning
+- Human Evaluation
+- Web application
+- Quantization
+- Natural Language Processing (NLP)

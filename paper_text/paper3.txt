@@ -1,0 +1,80 @@
+# Transformer-Based Model for Automated Bangla Typing Error Correction
+
+---
+
+## Abstract
+This research addresses the significant issue of keyboard typing errors in the **Bangla language**, a globally prominent language that lacks effective automated error correction systems. The core problem is the absence of a large, high-quality dataset for training such models. To solve this, the authors propose a **probabilistic approach** to generate a synthetic dataset, named the **Bangla Keyboard Typing Error Correction (BKTEC)** dataset. Using this novel dataset, they fine-tuned a transformer-based model to automatically correct typing errors. The trained model was evaluated on a test set and achieved a word-level accuracy of **88.56%**, demonstrating its effectiveness in a domain where few resources exist.
+
+---
+
+## Problem Statement
+Despite being one of the most widely spoken languages in the world, the Bangla language lacks an effective automated system for correcting typing errors. Such errors, which include misspellings, letter transpositions, and incorrect character usage, can lead to communication breakdowns and misinterpretations, especially in digital communication where text is crucial. A primary reason for this deficiency is the non-existence of a suitable dataset specifically for keyboard error correction in Bangla. Existing spell-checking methods for Bangla are often limited to non-word errors or rely on manual dictionaries and edit distance calculations, which may not be scalable or effective for typographical errors.
+
+---
+
+## Objectives
+- To develop a probabilistic approach for generating a **synthetic dataset** specifically for Bangla keyboard typing error correction (BKTEC).
+- To fine-tune a **transformer-based model** for the task of correcting Bangla typing errors.
+- To evaluate the performance of the proposed model on a test dataset and measure its accuracy in correcting errors.
+
+---
+
+## Methodology
+The research followed a systematic methodology to achieve its objectives:
+
+1.  **Data Collection and Synthesis**: Initially, a raw corpus of correct Bangla text was gathered by scraping web content from Bangla newspaper websites. The data was cleaned to remove non-Bangla characters and symbols, and was then divided into distinct sentences. A novel probabilistic approach was then used to generate a synthetic BKTEC dataset. This involved creating a list of corresponding error letters for each correct Bangla letter, categorized into three groups based on their keyboard proximity and assigned probabilities:
+    - **Group 1 (80% probability)**: Letters very close to the correct letter.
+    - **Group 2 (15% probability)**: Letters less close to the correct letter.
+    - **Group 3 (5% probability)**: All other letters with the lowest probability.
+    This list was used to replace original letters in the clean corpus with erroneous ones, creating pairs of incorrect and correct sentences.
+
+2.  **Tokenizer Design**: A subword tokenizer based on the **Byte-Pair Encoding (BPE)** algorithm was used to tokenize the text into subword units. This approach helps the model handle out-of-vocabulary words and rare words more effectively. The vocabulary size of the tokenizer was **40,256**.
+
+3.  **Model Architecture**: The proposed model is a **transformer-based encoder-decoder architecture**. The encoder takes the incorrect sentence as a sequence of input tokens and learns their hidden states. The decoder then uses these hidden states to generate the corrected text as a sequence of output tokens.
+
+4.  **Training and Evaluation**: The BKTEC dataset was split into an 80% training set, 10% validation set, and 10% testing set. The model was trained for **40 epochs** with a batch size of 32, a learning rate of 5e-5, and a total of **76,700,160 trainable parameters**. The performance was evaluated by calculating the word-level accuracy on the test dataset.
+
+---
+
+## Key Findings
+- The probabilistic approach successfully generated a synthetic dataset for Bangla keyboard typing error correction (BKTEC), which was used for training the model.
+- The fine-tuned transformer model achieved a word-level **test accuracy of 88.56%** in correcting typing errors in Bangla text.
+- The model successfully demonstrated its ability to correct a variety of complex errors, including a full sentence containing multiple incorrect words and spaces, as shown in the provided examples. 
+---
+
+## Contributions
+- **A novel methodology for creating a synthetic dataset** for Bangla keyboard typing error correction, which addresses a critical data scarcity problem.
+- **Development of the first transformer-based model** for automated Bangla keyboard error correction, moving beyond traditional methods like edit distance.
+- **Empirical evidence** that a deep learning, transformer-based approach can effectively and efficiently correct typographical errors in the Bangla language with high accuracy.
+
+---
+
+## Applications
+- The developed model can be used to create user-friendly interfaces for editing Bangla text quickly and accurately.
+- It can be integrated into word processors, mobile keyboards, and other digital platforms to provide automatic spelling and typing error correction for Bangla speakers.
+- The probabilistic data generation method can be adapted for developing similar error correction systems for other resource-scarce languages.
+
+---
+
+## Limitations
+- The model was trained and tested using a **synthetic dataset** generated from a probabilistic approach, which may not fully capture the diversity and complexity of all real-world typing errors.
+- The research does not address **real-word errors**, where a legitimate word is used in an incorrect context.
+
+---
+
+## Future Directions
+- Future work should focus on addressing **real-word errors** in Bangla text correction.
+- The synthetic dataset could be expanded to include more diverse and complex error types to improve the model's robustness.
+
+---
+
+## Keywords
+- Bangla NLP
+- Bangla Text Correction
+- Bangla Keyboard Error Correction
+- Transformer Model
+- Deep Learning
+- Synthetic Data
+- Byte-Pair Encoding (BPE)
+- Encoder-Decoder
+- Typographical Errors

@@ -1,0 +1,81 @@
+# Transfer Learning Model for Classifying Gastrointestinal Polyps from Endoscopic Images
+
+---
+
+## Abstract
+This paper presents a transfer learning approach for the classification of gastrointestinal (GI) polyps from endoscopic images. GI polyps are abnormal tissue growths that can develop into cancer, and their early detection is crucial for prevention. The proposed system uses a pre-trained **ResNet50** model, a type of Convolutional Neural Network (CNN), as its base layer. This model, originally trained on the ImageNet dataset, is fine-tuned to classify images as either "polyps" or "non-polyps" using the open-access Gastrovision dataset. The model achieved a testing accuracy of **89%** and a precision of **97.16%**. This research demonstrates the effectiveness of a transfer learning approach with ResNet50 for the early diagnosis of GI polyps, outperforming several other state-of-the-art models.
+
+---
+
+## Problem Statement
+Gastrointestinal (GI) diseases are among the most common disorders, with millions of cases and hundreds of thousands of deaths worldwide each year. GI polyps, abnormal tissue growths in the stomach and colon, are a major source of GI cancer. The early removal of these polyps can significantly reduce the risk of cancer. However, GI endoscopic procedures generate a vast number of images, and relying solely on human visual analysis for polyp identification is time-consuming and prone to misdiagnosis. This problem necessitates an effective and reliable automated system for the classification of GI polyps to aid in early diagnosis and treatment.
+
+---
+
+## Objectives
+- To develop a framework for the classification of polyps in the GI tract from endoscopic images.
+- To use a **transfer learning** approach with a pre-trained **ResNet50** model to solve this classification problem.
+- To compare the performance of the proposed model with other state-of-the-art techniques for polyp classification.
+- To provide an effective solution for the early diagnosis of GI cancer by accurately separating polyp and non-polyp images.
+
+---
+
+## Methodology
+The research followed a structured methodology to build and evaluate the polyp classification model.
+
+1.  **Dataset Description**: The study used the publicly available **'Gastrovision'** dataset, which contains 8,000 endoscopic images from 27 different classes of GI abnormalities, including polyps and non-polyps. The dataset consists of 2,655 polyp images and 5,345 non-polyp images. The dataset was divided into an 80% training set and a 20% validation set.
+
+2.  **Preprocessing**: To prepare the images for the model, each image was scaled to **224x224 pixels** in the RGB color space, a standard requirement for models pre-trained on ImageNet.
+
+3.  **Transfer Learning with ResNet50**: A deep Convolutional Neural Network (CNN) architecture known as **ResNet50** was used.
+    - **Base Model**: The ResNet50 model, pre-trained on the vast ImageNet dataset, served as the base layer. Its pre-trained weights were used as the initial weights for the new model.
+    - **Customization**: The last layer of the original ResNet50 model was removed and replaced with new layers, including an average pooling layer, a dense layer, and an activation layer.
+    - **Output Layer**: A final dense layer with two output neurons and a **Softmax** activation function was added to classify the images into two classes: "polyps" and "non-polyps."
+
+4.  **Training and Evaluation**: The model was trained with hyperparameter tuning to minimize loss and avoid overfitting. The training used a batch size of 100, a learning rate of 0.01, and the SGD optimizer with a decay rate of $10^{-6}$ and a momentum of 0.9. The model's performance was evaluated using accuracy, specificity, precision, recall, and F1-score. A confusion matrix was generated on a test set of 1,605 samples, of which 534 were polyps and 1071 were non-polyps.
+
+---
+
+## Key Findings
+- The proposed transfer learning model with ResNet50 achieved an impressive test accuracy of **89%**. 
+- The model demonstrated a high precision of **97.16%**, meaning that a high percentage of the images predicted as polyps were actually polyps. 
+- It also achieved a specificity of **98.97%**, indicating its strong ability to correctly identify non-polyp images. 
+- The training and validation accuracy of the model reached **91.99%** and **92.29%**, respectively, suggesting that the model was efficient in learning and avoided overfitting. 
+- In a comparative analysis, the proposed model outperformed several other CNN and CNN-based hybrid models from other studies. 
+
+---
+
+## Contributions
+- A transfer learning-based framework for the classification of GI polyps using a pre-trained **ResNet50** model.
+- The effective use of a pre-trained model on a new, domain-specific dataset, which proves to be an efficient approach for medical image analysis.
+- The demonstration of a high-performance model for GI polyp classification, which can assist in the early diagnosis of GI cancer.
+
+---
+
+## Applications
+- The developed model can be integrated into a **Computer Aided Diagnosis (CAD)** system to help physicians identify polyps more efficiently and accurately from endoscopic images.
+- It can serve as a tool for the early detection of GI polyps, which is a crucial step in preventing GI cancer.
+
+---
+
+## Limitations
+- The model was trained on the 'Gastrovision' dataset, which might not be fully representative of all types of endoscopic images in real-world clinical settings.
+- The study mentions that the model's performance can still be improved, suggesting that there is room for refinement.
+
+---
+
+## Future Directions
+- Future work could focus on using more advanced deep learning algorithms to further improve the model's performance.
+- The model's accuracy could be increased by using an **ensemble model** that combines the proposed transfer learning model with other deep learning architectures.
+
+---
+
+## Keywords
+- Gastrointestinal (GI) polyps
+- Deep Learning (DL)
+- Transfer Learning
+- Convolutional Neural Network (CNN)
+- ResNet50
+- Endoscopic Images
+- Classification
+- Computer Aided Diagnosis (CAD)

@@ -1,0 +1,80 @@
+# Creating a Generative AI Model for the Bangla Language
+
+---
+
+## Abstract
+This research introduces **BanglaGPT**, a generative pretrained transformer model specifically designed for the Bangla (Bengali) language. The model was trained from scratch to address the scarcity of high-performing, language-specific models for low-resource languages. To accomplish this, the researchers first created a novel and large **26.24 GB** dataset called **BanglaCLM** by scraping and cleaning text from various public websites. The model, which is based on the GPT-2 architecture, was trained using the causal language modeling (CLM) objective and a Byte-Pair Encoding (BPE) tokenizer. BanglaGPT demonstrated superior performance in text generation, achieving a perplexity score of **2.86** and a loss score of **0.45** on the test set, outperforming multilingual models (mGPT) and traditional LSTM-based models.
+
+---
+
+## Problem Statement
+The field of Natural Language Processing (NLP) has seen significant advancements with the development of pretrained language models like GPT-2, but these models are predominantly built for resource-intensive languages such as English. Low-resource languages like Bangla are forced to rely on multilingual frameworks (mGPT), which, due to their diverse training on multiple languages, often perform poorly for a specific, resource-scarce language. Moreover, there was no existing pretrained GPT-2 model specifically for the Bangla language. Training a large-scale transformer model requires vast amounts of data, which are not readily available for languages with limited digital resources.
+
+---
+
+## Objectives
+- To develop and train a **monolingual GPT-based model** for the Bangla language, named **BanglaGPT**.
+- To create a large, high-quality **Bangla language corpus (BanglaCLM)** to facilitate the training of the model.
+- To deploy the BanglaGPT model for the downstream task of **text generation**.
+- To evaluate the performance of BanglaGPT against existing multilingual and RNN-based models to demonstrate its effectiveness.
+
+---
+
+## Methodology
+The research followed a multi-step process to develop and train the BanglaGPT model:
+
+1.  **Dataset Collection**: The researchers created a new dataset called **BanglaCLM** by gathering 26.24 GB of Bangla text. This corpus was compiled by extracting Bangla content from various sources, including the **OSCAR** multilingual crawled corpus, a **Wikipedia dump**, and popular Bangladeshi news websites like **ProthomAlo** and **Kalerkantho**.
+    
+    2.  **Data Preprocessing**: The raw data was cleaned by removing HTML tags and non-Bangla content. The data was then normalized using a Bangla normalizer library to apply Unicode normalization and rule-based replacements.
+3.  **Tokenizer Design**: A subword-based tokenization algorithm called **Byte-Pair Encoding (BPE)** was used to process the text. This method identifies a set of distinct words from the corpus to create a vocabulary of subword units. The tokenizer had a vocabulary size of **50,256**.
+4.  **Model Architecture and Training**: The BanglaGPT model is based on the **decoder-only GPT-2 transformer architecture**. It consists of multiple decoder blocks, each containing a **masked self-attention block** and a **feed-forward neural network**. The model was trained from scratch using a causal language modeling (CLM) objective. Key hyperparameters included a batch size of 32, a learning rate of 5e-5, and training for **40 epochs**. A fixed context size of 128 tokens was used, with a data collator to efficiently handle longer documents.
+5.  **Evaluation**: The trained model was evaluated on a test set of 4,960 sentences from recent news articles. The primary metric used was **Perplexity (PPL)**, where a lower score indicates better performance.
+
+---
+
+## Key Findings
+- The trained BanglaGPT model achieved a perplexity score of **2.86** on the test set, indicating a high level of performance for Bangla text generation.
+- The model's loss score converged to **0.45** after 40 epochs of training. - **BanglaGPT significantly outperformed other models**:
+    - Compared to a traditional sequence-to-sequence model using LSTM units, BanglaGPT's perplexity of 2.86 was much lower than the LSTM model's score of **10.512**.
+    - It also performed better than the multilingual **mGPT model**, which had a perplexity score of **6.27** on the same test set.
+- The training process confirmed that language-specific models can outperform multilingual models for low-resource languages.
+
+---
+
+## Contributions
+- **Creation of a novel Bangla language dataset (BanglaCLM)**, comprising 26.24 GB of text, which addresses the lack of large, high-quality corpora for NLP tasks in Bangla.
+- **Development and release of BanglaGPT**, the first pretrained GPT-based model specifically for the Bangla language.
+- **Proof of concept** that a monolingual, domain-specific model can achieve superior performance over generic multilingual models for text generation in a low-resource language.
+- The model and dataset resources have been made publicly available to the research community.
+
+---
+
+## Applications
+- **Text Generation**: The model can be used for various applications such as auto-complete features in word processors, email composers, and generating creative text.
+- **Future NLP Tasks**: The pretrained BanglaGPT model can serve as a foundation for other downstream NLP tasks, including text summarization and question-answering systems.
+- **Research and Development**: The BanglaCLM dataset can be used by other researchers to train and evaluate new models for the Bangla language, facilitating further advancements in the field.
+
+---
+
+## Limitations
+- The model, BanglaGPT, is based on the GPT-2 architecture, which has significantly fewer parameters (124 million) and training data (26.24 GB) than more recent models like GPT-3 (175 billion parameters).
+- Due to hardware constraints, the researchers were limited to training a GPT-2 model and could not train a more advanced model like GPT-3.
+
+---
+
+## Future Directions
+- **Dataset Expansion**: The BanglaCLM dataset could be extended with more data to enable the training of larger, more complex models like GPT-3.
+- **Model Upgrades**: With the necessary hardware resources, researchers can train a **GPT-3 model** for Bangla and conduct a comparative study with BanglaGPT to assess performance improvements.
+- **Downstream Tasks**: The pretrained BanglaGPT model can be fine-tuned and applied to other practical NLP tasks, such as **text summarization** and **question answering**.
+
+---
+
+## Keywords
+- Bangla NLP
+- BanglaGPT
+- Text Generation Model
+- Causal Language Modeling (CLM)
+- Generative Pretrained Transformer (GPT)
+- Byte-Pair Encoding (BPE)
+- Perplexity
+- Low-Resource Language 

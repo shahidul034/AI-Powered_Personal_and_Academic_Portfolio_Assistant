@@ -1,0 +1,73 @@
+# Uncertainty-Driven Filtering for Medical Machine Translation
+
+---
+
+## Abstract
+This paper introduces an **uncertainty-driven filtering method** to enhance long-context medical machine translation (MT). The research addresses a key problem with knowledge injection techniques, like the **Chain-of-Dictionary (MedCOD)** framework, where adding too much external information can overload a model, leading to issues such as ambiguity, inconsistency, and truncated outputs. The proposed method identifies and prioritizes only the most challenging or "uncertain" terms for the model using a combination of four token-level metrics: **perplexity, KL divergence, negative entropy, and Gini confidence score**. This selective approach, implemented via **Borda voting**, consistently outperformed models that injected all available knowledge, while also significantly reducing prompt length. The findings highlight that "less is more" for knowledge injection, with a small number of carefully selected terms yielding the best results.
+
+---
+
+## Problem Statement
+In specialized fields like medicine, machine translation (MT) models often benefit from external knowledge sources like dictionaries or glossaries to handle rare or domain-specific terminology. However, simply adding a large amount of this information can lead to "knowledge injection overload". This overload can manifest in several failure patterns:
+- **Ambiguity Drift**: The model selects the wrong meaning for a term when multiple senses are provided.
+- **Truncation/Dilution**: Long definitions push important context out of the model's limited context window.
+- **Knowledge Conflict**: The injected information contradicts the model's internal knowledge, leading to unstable outputs.
+- **Loss of Controllability**: The model generates off-topic or unsolicited information.
+These issues compromise the accuracy and safety of medical translation, which is a high-stakes application.
+
+---
+
+## Objectives
+- To introduce an **uncertainty-driven filtering method** to mitigate the problem of knowledge injection overload in long-context medical MT.
+- To identify which external knowledge a model will benefit from most by measuring its **token-level uncertainty**.
+- To compare different aggregation methods, such as naive averaging and Borda voting, for combining multiple uncertainty signals.
+- To demonstrate that selectively injecting only the most uncertain terms significantly improves terminological fidelity and overall translation quality.
+
+---
+
+## Key Findings
+- **"Less is More" Principle**: Injecting only the most uncertain keywords (top-k) consistently outperformed supplying all keywords, especially for stronger models, while also reducing the overall prompt length.
+- **Optimal `k` Value**: For most models, a small top-k value of one to three yielded the best results. Weaker models or harder translation tasks sometimes benefited from a larger `k`.
+- **Robustness of Borda Voting**: The Borda voting aggregation method provided more stable and generalizable results than naive averaging, which was more sensitive to noise and often favored extreme `k` values (0 or -1).
+- **Direction-Specific Uncertainty Signals**: The most predictive uncertainty metrics varied by translation direction. Perplexity was most effective for English-to-Spanish translation, while dispersion-based metrics (KL divergence, entropy, and Gini) were more effective for Spanish-to-English.
+
+---
+
+## Contributions
+- A novel, model-agnostic, and uncertainty-driven filtering method for knowledge injection in long-context medical MT.
+- A systematic comparison of different uncertainty metrics and aggregation methods for selecting high-value keywords.
+- A comprehensive study and failure analysis that provides a new taxonomy of knowledge injection overload issues.
+
+---
+
+## Applications
+- The framework can be used to improve the terminological accuracy and fidelity of machine translation in specialized domains, particularly medicine.
+- By reducing unnecessary context, the method can make LLM-based translation more computationally efficient and cost-effective.
+- This approach can be applied in decision-support or educational contexts where translation accuracy for technical terms is critical, but with the caveat that professional review is still needed.
+
+---
+
+## Limitations
+- The study's scope is limited to English-Spanish biomedical translation using a specific dataset, which may not generalize to other language pairs or medical subdomains.
+- The evaluation relies on automatic metrics and does not include large-scale human validation by clinical experts.
+- The method's assumptions about uncertainty estimation and aggregation are heuristic and could be refined in future work.
+
+---
+
+## Future Directions
+- Future work should expand the evaluation to include more language pairs, especially low-resource and morphologically rich languages, and other clinical domains.
+- The researchers plan to test the method on a wider range of models, including smaller, more deployment-friendly architectures.
+- Integrating human-in-the-loop validation and external signals like retrieval difficulty or corpus frequency could further refine the keyword ranking process.
+
+---
+
+## Keywords
+- Uncertainty Estimation
+- Machine Translation (MT)
+- Medical Machine Translation
+- Chain-of-Dictionary (MedCOD)
+- Knowledge Injection
+- Long-Context
+- Perplexity
+- Borda Voting
+- LLM

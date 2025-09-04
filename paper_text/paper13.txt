@@ -1,0 +1,82 @@
+# Classifying Bangla Emergency Posts on Social Media with Transformer Models
+
+---
+
+## Abstract
+This research explores the use of Transformer-based models for classifying emergency-related posts written in Bangla on social media. The study created a custom dataset of 5,839 social media posts from Facebook and Twitter, manually labeled into nine nominal categories such as "accident," "fire," and "natural disaster." The posts often contained a mix of Bangla and English words, making traditional classification methods less effective. The researchers compared the performance of several models, including traditional machine learning, deep neural networks, and various Transformer-based models. Among them, the Transformer-based model **XLM-ROBERTa** significantly outperformed the others, achieving an F1-score of **95.25%**. This finding suggests that Transformer models are particularly well-suited for classifying multilingual social media text and can be a valuable tool for emergency response in Bengali-speaking regions.
+
+---
+
+## Problem Statement
+The proliferation of social media has made it a valuable tool for crowdsourcing information during emergencies like natural disasters and public health crises. However, the sheer volume of data, much of it irrelevant, makes it challenging to identify critical posts that require immediate action from authorities. The problem is particularly difficult for languages like Bangla, which are rich in characteristics and often involve a mix of English and native words in social media posts. There is a need for an accurate and efficient system that can classify Bangla emergency posts to facilitate faster and more effective response and resource allocation.
+
+---
+
+## Objectives
+- To develop a custom dataset of social media posts in Bangla that can be used for emergency text classification.
+- To compare the performance of different classification methods, including traditional machine learning, deep learning, and transformer-based models, on this dataset.
+- To identify the most effective model for classifying emergency-related posts in Bangla.
+- To demonstrate that transformer-based models are better suited for handling social media text that contains a mix of languages.
+
+---
+
+## Methodology
+The research followed a structured methodology to build and test the emergency post classification system.
+
+1.  **Dataset Creation**: A custom dataset of 5,839 social media posts was created by collecting data from Facebook and Twitter, as well as daily newspapers. The posts were manually labeled into nine categories: `accident`, `blood`, `crime`, `fire`, `natural disaster`, `pandemic`, `suicide`, `war`, and `weather`. The dataset was split into 56% for training, 14% for validation, and 30% for testing.
+
+2.  **Preprocessing (Optional)**: The researchers performed an optional preprocessing step that included punctuation and stop word removal, common word removal, and stemming. However, they also tested the models on raw, unprocessed data to see how they would perform on mixed-language content.
+
+3.  **Tokenization and Embedding**: The preprocessed text was converted into machine-readable vectors using a subword tokenization algorithm. BERT models used the WordPiece algorithm, while XLM-ROBERTa used SentencePiece. Each token in a sentence was converted into an embedding vector. For a sentence length of 100, a tensor of size $100 \times 768$ was generated.
+
+4.  **Model Architectures**: The study compared several models, including traditional machine learning (Logistic Regression, Naive Bayes, K-Nearest Neighbors), deep learning (LSTM, Bi-LSTM, CNN), and transformer-based models (mBERT, BanglaBERT, XLM-ROBERTa).
+
+5.  **Fine-tuning and Classification**: The embedding vectors were fed into a dense layer, which was fine-tuned with specific hyperparameters. The final output layer, a linear layer, connected the embeddings to the nine classification categories, with the category having the highest value being the final prediction. Hyperparameters like learning rate and batch size were tuned to achieve the best performance for each model.
+
+---
+
+## Key Findings
+- The **XLM-ROBERTa** model achieved the highest F1-score of **95.25%**, outperforming all other models. It also had the highest precision (95.22%) and recall (95.38%).
+- Other transformer models, such as `BanglaBERT` (F1-score 94.63%) and `mBERT` (F1-score 93.59%), also performed significantly better than traditional machine learning and deep learning models.
+- The superior performance of transformer models is attributed to their ability to capture contextual information within sentences, which is particularly useful for social media posts that often contain a mix of languages.
+- The researchers found that training and validation accuracy and loss for XLM-ROBERTa gradually leveled off, indicating a good balance between model learning and avoiding overfitting.
+
+---
+
+## Contributions
+- A novel dataset of Bangla social media posts specifically for emergency text classification.
+- A comprehensive comparison of traditional machine learning, deep learning, and transformer-based models for this task.
+- A strong validation of the superior performance of transformer-based models, particularly XLM-ROBERTa, for mixed-language social media text in a low-resource language context.
+
+---
+
+## Applications
+- The system can be deployed to automatically detect and classify emergency-related posts in Bangla on social media platforms like Facebook and Twitter.
+- The classified posts can be used by government agencies, local authorities, and law enforcement to facilitate a more efficient and targeted emergency response.
+- The methodology can be adapted for other text classification tasks in Bangla and other low-resource, morphologically rich languages.
+
+---
+
+## Limitations
+- The custom dataset was manually labeled, which could introduce potential disagreements or biases in some of the labels.
+- The system sometimes misclassifies posts, such as categorizing an accident as a natural disaster, highlighting the challenges of dealing with ambiguous and varied linguistic patterns.
+- Transformer models require significant computing power, which can be a barrier to implementation.
+
+---
+
+## Future Directions
+- Future work will focus on refining preprocessing and feature engineering to improve the quality of the input data.
+- The researchers plan to explore multi-task learning to enable the model to perform multiple related classification tasks, such as classifying the type of emergency and assessing its level of urgency.
+
+---
+
+## Keywords
+- Text Classification
+- Transformers
+- BERT
+- XLM-ROBERTa
+- Emergency Post
+- Natural Language Processing (NLP)
+- Social Media
+- Bangla
+- Deep Learning

@@ -1,0 +1,75 @@
+# BNAD: A Large-Scale Dataset of Bangla News Articles
+
+---
+
+## Abstract
+This paper introduces the **Bangla News Article Dataset (BNAD)**, a large and updated dataset of Bangla news articles collected from nine different news websites. The dataset contains over **1.9 million articles**, with a wide range of categories including sports, economy, politics, and technology. The articles are provided in JSONL format and include attributes like title, content, time, category, and tags. This comprehensive dataset is intended to support various research activities in Bangla Natural Language Processing (NLP), such as text classification, text generation, and the development of domain-specific Large Language Models (LLMs) for the Bengali linguistic context of Bangladesh.
+
+---
+
+## Problem Statement
+The field of natural language processing for the Bangla language has been hindered by a lack of large, high-quality, and up-to-date datasets. Many existing resources are small or outdated, which makes it difficult to train robust deep learning and machine learning models for tasks like text classification and text summarization. Specifically, there was a need for a modern, large-scale news article dataset to advance research on Bangla semantics and facilitate the development of language models tailored to the unique linguistic context of Bangladesh.
+
+---
+
+## Objectives
+- To compile a large and comprehensive dataset of Bangla news articles from multiple sources.
+- To ensure the dataset is annotated with various attributes such as title, content, time, and category to support diverse NLP tasks.
+- To create a dataset that is more extensive and current than existing resources, such as the Potrika dataset.
+- To provide a publicly accessible dataset that can be used by data scientists and researchers for non-commercial purposes.
+
+---
+
+## Methodology
+The researchers used a web-scraping and crawling approach to collect articles from nine Bangla news websites.
+
+1.  **Data Acquisition**: The team used Python, along with the **Requests** and **BeautifulSoup** libraries, to programmatically retrieve HTML content from the target news websites. The process involved a systematic scraping algorithm that used loops to extract articles from consecutive web pages, ensuring a continuous and orderly data collection process.
+
+2.  **Data Extraction**: For each article, the algorithm extracted multiple attributes: title, content, time, category, meta, and tags, if available on the website. The data was stored in JSONL file format to enhance storage efficiency and flexibility.
+
+3.  **Data Cleaning and Quality Control**: The collected data was continuously monitored for errors, inconsistencies, and missing information, with the scraping code being adjusted as needed. Undesired content like image tags, additional HTML elements, and fast links were removed. Newlines were removed from the content for better storage. Missing values for content, meta, and keywords were replaced with empty strings.
+
+4.  **Category Consolidation**: To prepare the data for visualization and classification tasks, subcategories from each newspaper were merged into broader, semantically similar main categories. For instance, categories like 'International News,' 'Middle East,' and 'Europe' from one newspaper were all merged into a single 'International' category. The dataset does not contain duplicate articles.
+
+5.  **Validation**: The dataset was validated by training it on various machine learning classifiers, including Support Vector Classification, K-Nearest Neighbors, and Logistic Regression, to demonstrate its utility for text classification tasks.
+
+---
+
+## Key Findings
+- The created dataset is one of the largest of its kind, containing **1,927,229 articles** and over **593 million words**.
+- It is significantly larger and more current than previous datasets like the Potrika dataset, which had around 664,880 articles and discontinued updates from 2020.
+- The dataset features a wide variety of articles across many categories, with `Bangladesh` (48.5%), `International` (15.2%), and `Sports` (14.1%) being the largest categories. - Article content lengths vary widely, from 0 to **30,000 characters**, and no duplicate articles exist in the dataset.
+- The dataset is provided in nine separate **JSONL files**, one for each newspaper source, and includes attributes such as title, content, and time for all articles.
+
+---
+
+## Contributions
+- A novel, large-scale, and up-to-date Bangla news article dataset (BNAD) has been created and made publicly available.
+- The dataset addresses a critical gap in NLP research for the Bangla language by providing a comprehensive, modern resource suitable for training large language models.
+- The study's systematic data collection algorithm can be a valuable model for researchers looking to scrape data from websites with varying structures.
+- The dataset provides a strong foundation for a variety of NLP activities, including text classification and text generation.
+
+---
+
+## Applications
+- **NLP Research**: The dataset can be used to perform various NLP tasks, such as **text classification**, **text summarization**, **named entity recognition**, and **question answering**.
+- **Language Model Development**: It is valuable for training and developing **domain-specific large language models** for the linguistic context of Bangladesh.
+- **Data Analysis**: The dataset can be used to investigate and assess theories related to Bangla NLP.
+
+---
+
+## Limitations
+- The scraping methodology was not able to retrieve all attributes for every newspaper due to inconsistencies in website structure. For example, the `Samakal` newspaper's data lacks a `Category` attribute.
+- The dataset's contents were not heavily filtered to retain original context, which means some articles have very short content lengths or other storage and character-related issues.
+- Some websites did not support scripting or had complex URL indexing methods, which posed challenges during data crawling.
+
+---
+
+## Keywords
+- Data analysis
+- Text classification
+- Natural language processing
+- Bangla dataset
+- Web scraping
+- Text generation
+- Large language models

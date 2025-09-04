@@ -1,0 +1,190 @@
+[
+  {
+    "id": "paper1",
+    "title": "An Applied Statistics dataset for human vs AI-generated answer classification",
+    "aliases": [
+      "Applied Statistics dataset",
+      "Human vs AI answer classification",
+      "AI-generated answer classification",
+      "SoftwareX paper"
+    ],
+    "text": "paper_text/paper1.txt"
+  },
+  {
+    "id": "paper2",
+    "title": "BanglaGPT: A Generative Pretrained Transformer-based Model for Bangla Language",
+    "aliases": [
+      "BanglaGPT",
+      "Bangla GPT model",
+      "Bangla language transformer",
+      "Generative Pretrained Transformer for Bangla"
+    ],
+    "text": "paper_text/paper2.txt"
+  },
+  {
+    "id": "paper3",
+    "title": "Towards Developing a Transformer-based Bangla Typing Error Correction Model: A Deep Learning-based Approach",
+    "aliases": [
+      "Bangla Typing Error Correction",
+      "Bangla transformer error correction",
+      "Bangla typing correction model",
+      "Deep learning Bangla error correction"
+    ],
+    "text": "paper_text/paper3.txt"
+  },
+  {
+    "id": "paper4",
+    "title": "LLM-Based Chatbot Builder for Question Answering",
+    "aliases": [
+      "LLM Chatbot Builder",
+      "Chatbot for Question Answering",
+      "LLM QA chatbot",
+      "Chatbot builder paper"
+    ],
+    "text": "paper_text/paper4.txt"
+  },
+  {
+    "id": "paper5",
+    "title": "Word Suggestion for Bangla Language Using a Masked Language Model",
+    "aliases": [
+      "Bangla Word Suggestion",
+      "Masked Language Model for Bangla",
+      "Bangla word prediction",
+      "Bangla MLM word suggestion"
+    ],
+    "text": "paper_text/paper5.txt"
+  },
+  {
+    "id": "paper6",
+    "title": "BNAD: A Large-Scale Dataset of Bangla News Articles",
+    "aliases": [
+      "BNAD dataset",
+      "Bangla News Articles Dataset",
+      "Large-scale Bangla news dataset",
+      "BNAD paper"
+    ],
+    "text": "paper_text/paper6.txt"
+  },
+  {
+    "id": "paper7",
+    "title": "Enhancing English‑to‑Spanish Medical Translation of Large Language Models Using Enriched Chain‑of‑Dictionary Framework.",
+    "aliases": [
+      "Enriched Dictionary Framework for Medical Translation",
+      "English-to-Spanish LLM Medical Translation",
+      "Medical Translation with Chain-of-Dictionary",
+      "Enhanced Medical Translation using LLMs",
+      "Chain-of-Dictionary LLM Translation Method"
+    ],
+    "text": "paper_text/paper7.txt"
+  },
+  {
+    "id": "paper8",
+    "title": "Enhancing Multilingual Medical Summarization via Contextual Keyword Augmentation.",
+    "aliases": [
+      "Multilingual Medical Summarization via Keyword Augmentation",
+      "Context-Based Medical Summarization with LLMs",
+      "Contextual Keyword Augmented Summarization",
+      "Medical Summarization in Multiple Languages"
+    ],
+    "text": "paper_text/paper8.txt"
+  },
+  {
+    "id": "paper9",
+    "title": "Agricultural Recommendation System Powered by a Weather Forecasting Model for Bangladesh",
+    "aliases": [
+      "Agricultural Recommendation System",
+      "Weather-based Agri Recommendation",
+      "Bangladesh Agri Forecasting",
+      "Agri recommendation weather model"
+    ],
+    "text": "paper_text/paper9.txt"
+  },
+  {
+    "id": "paper10",
+    "title": "Gold Standard Dataset for Evaluating Bangla Stemming Algorithms",
+    "aliases": [
+      "Bangla Stemming Dataset",
+      "Gold Standard Bangla Stemming",
+      "Bangla stemming evaluation",
+      "Stemming algorithm dataset"
+    ],
+    "text": "paper_text/paper10.txt"
+  },
+  {
+    "id": "paper11",
+    "title": "Classification of Motor Imagery EEG Signals Using Deep Learning",
+    "aliases": [
+      "Motor Imagery EEG Classification",
+      "EEG Deep Learning Classification",
+      "Motor imagery EEG deep learning",
+      "EEG signal classification"
+    ],
+    "text": "paper_text/paper11.txt"
+  },
+  {
+    "id": "paper12",
+    "title": "Designing a Rule-Based Stemmer for the Bangla Language",
+    "aliases": [
+      "Bangla Rule-Based Stemmer",
+      "Bangla stemming rule-based",
+      "Rule-based Bangla stemmer",
+      "Bangla stemmer design"
+    ],
+    "text": "paper_text/paper12.txt"
+  },
+  {
+    "id": "paper13",
+    "title": "Classifying Bangla Emergency Posts on Social Media with Transformer Models",
+    "aliases": [
+      "Bangla Emergency Post Classification",
+      "Bangla Social Media Transformer",
+      "Emergency post transformer model",
+      "Bangla social media classification"
+    ],
+    "text": "paper_text/paper13.txt"
+  },
+  {
+    "id": "paper14",
+    "title": "Deep Learning Model for Non-Invasive Hypertension Classification",
+    "aliases": [
+      "Non-Invasive Hypertension Classification",
+      "Hypertension Deep Learning Model",
+      "Non-invasive hypertension DL",
+      "Hypertension classification model"
+    ],
+    "text": "paper_text/paper14.txt"
+  },
+  {
+    "id": "paper15",
+    "title": "Uncertainty-Driven Filtering for Medical Machine Translation",
+    "aliases": [
+      "Uncertainty-Driven Filtering",
+      "Medical Machine Translation Filtering",
+      "Uncertainty filtering medical translation",
+      "Medical MT uncertainty filtering"
+    ],
+    "text": "paper_text/paper15.txt"
+  },
+  {
+    "id": "paper16",
+    "title": "Transfer Learning Model for Classifying Gastrointestinal Polyps from Endoscopic Images",
+    "aliases": [
+      "Gastrointestinal Polyp Classification",
+      "Endoscopic Image Transfer Learning",
+      "GI polyp classification model",
+      "Transfer learning endoscopic images"
+    ],
+    "text": "paper_text/paper16.txt"
+  },
+  {
+    "id": "paper17",
+    "title": "Fake News Detection Using Ensemble and Deep Learning Models",
+    "aliases": [
+      "Fake News Detection",
+      "Ensemble Deep Learning Fake News",
+      "Fake news deep learning model",
+      "Fake news ensemble model"
+    ],
+    "text": "paper_text/paper17.txt"
+  }
+]

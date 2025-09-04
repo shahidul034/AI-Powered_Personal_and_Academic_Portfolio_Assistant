@@ -1,0 +1,89 @@
+# Agricultural Recommendation System Powered by a Weather Forecasting Model for Bangladesh
+
+---
+
+## Abstract
+This paper introduces a novel agricultural recommendation system designed for farmers in Bangladesh. The system is based on a highly accurate weather forecasting model that uses a **multivariate Stacked Bi-LSTM Network**. The model predicts four key weather parameters—Rainfall, Temperature, Humidity, and Sunshine—for any location in Bangladesh. The forecasts then power a context-based recommendation system that provides farmers with actionable advice on planting, irrigation, and harvesting. Additionally, the system is capable of alerting farmers about extreme weather conditions and suggesting suitable crops for flood- and drought-prone regions. This is the first in-depth analysis and recommendation system of its kind for Bangladesh, leveraging real-world weather data from the country's 35 weather stations.
+
+---
+
+## Problem Statement
+Bangladesh is an agrarian economy heavily dependent on agriculture for food security and economic growth. However, this labor-intensive sector is highly susceptible to unfavorable weather conditions like heavy rainfall, drought, and low temperatures. Farmers often rely on traditional, orthodox techniques and lack access to accurate weather forecasts and modern knowledge, leading to low crop yields and financial losses. There is a significant need for a reliable, data-driven system that can provide accurate, location-specific weather forecasts and agricultural recommendations to help farmers mitigate risks and improve productivity. Existing research on weather forecasting for agriculture often doesn't consider all the important weather parameters or provide a sustainable model for the entire country of Bangladesh.
+
+---
+
+## Objectives
+- To collect, structure, and analyze a comprehensive dataset of real-world weather data from all 35 weather stations in Bangladesh.
+- To develop an efficient and accurate weather forecasting model for Bangladesh using a **Stacked Bi-LSTM model**.
+- To create a context-based agricultural recommendation system that provides actionable advice to farmers based on the weather forecast and other parameters.
+- To provide crop suggestions specifically tailored for flood- and drought-prone regions of Bangladesh.
+
+---
+
+## Methodology
+The development of the agricultural recommendation system followed a detailed, multi-stage process.
+
+1.  **Data Collection and Preprocessing**: The researchers acquired historical weather data from the Bangladesh Meteorological Department for all 35 weather stations, covering the period from their establishment to 2022. The collected data included Rainfall, Temperature, Humidity, Sunshine, Wind Speed, and Wind Direction. The data was initially unstructured and contained missing values represented by blanks or asterisks (*).
+    - **Data Structuring and Cleaning**: The data was converted from a monthly format to a daily format. Wind direction, originally in string format, was converted into a numerical vector to reduce computational complexity.
+    - **Handling Missing Values**: The primary technique used to impute missing data was **linear interpolation**, which was chosen because it maintains the seasonality and trend of the time series data.
+    - **Normalization**: The data was normalized by subtracting the mean and dividing by the standard deviation to reduce the complexity of the neural network model.
+    - **Train and Test Split**: The processed dataset was divided into training, validation, and test sets with a ratio of 70%, 20%, and 10%, respectively, without random shuffling to preserve the time series continuity.
+
+2.  **Model Architecture and Training**: A **Stacked Bi-LSTM model** was selected and customized for the weather forecasting task. The model uses a sequence of 365 consecutive daily data points to predict weather for the subsequent 365-day period. The Bi-LSTM layers were stacked, and a `TimeDistributed` dense layer was used to apply the same dense layer to every time step.
+    - **Model Comparison**: The researchers compared several models, including standard LSTM and Bi-LSTM models, both with individual weather station data and combined data. The model trained on individual stations with a standard Bi-LSTM architecture performed the best.
+    - **Hyperparameter Tuning**: The final model architecture consisted of three Bi-LSTM layers and one `TimeDistributed` dense layer, which was found to be the most efficient and accurate. It was trained for 20 epochs with a batch size of 64 and an Adam optimizer.
+
+3.  **Forecast and Recommendation Generation**:
+    - **Finding Nearest Weather Station**: To provide location-specific forecasts, the **Haversine formula** was used to calculate the distance between a user's location (latitude and longitude) and all 35 weather stations. The nearest station's trained model was then used for the prediction.
+    - **Recommendations**: Based on the weather forecast, the system generates actionable recommendations for farmers. It suggests crops for different seasons (Bari and Kharif). It also provides crop recommendations specifically for known flood- and drought-prone areas, using pre-existing knowledge maps of these regions. The system also alerts farmers about significant long-term changes in temperature and rainfall compared to historical thresholds, advising them to strengthen their irrigation systems.
+
+---
+
+## Key Findings
+- The **Stacked Bi-LSTM model** with three layers and one `TimeDistributed` dense layer achieved the best performance, with an average $R^2$ value of **0.9838** on the test set.
+- The approach of training separate models for each individual weather station significantly outperformed a single model trained on combined data, which had a very low $R^2$ value of 0.0131.
+- The use of **linear interpolation** for handling missing values was identified as the most effective method, as it preserves the seasonal and trend patterns of the time series data.
+- The weather data, after preprocessing, was confirmed to be **stationary** using the Augmented Dickey-Fuller test, which is a key requirement for time series forecasting models.
+- The agricultural recommendation system can successfully provide context-based advice, including crop suggestions for specific flood- and drought-prone regions.
+
+---
+
+## Contributions
+- A novel and efficient weather forecasting model for Bangladesh based on a customized Stacked Bi-LSTM architecture.
+- The first comprehensive real-world weather dataset for Bangladesh, which was meticulously collected, preprocessed, and analyzed from all 35 weather stations.
+- A functional and context-aware agricultural recommendation system that integrates weather forecasting with geographical and seasonal knowledge, providing valuable assistance to farmers.
+- A universal methodology that can be applied to other countries or regions simply by training the model on their respective weather data.
+
+---
+
+## Applications
+- Farmers in Bangladesh can use this system to make informed decisions about planting, irrigation, and harvesting, thereby increasing crop yield and profitability.
+- The system can be used by agricultural agencies and policymakers to provide location-specific advisories to farmers.
+- The methodology can be adapted for developing similar agricultural recommendation systems in other regions of the world facing similar challenges.
+
+---
+
+## Limitations
+- The model was trained using historical, secondary data and does not currently incorporate real-time sensor readings.
+- The recommendations are based on pre-existing knowledge maps of flood- and drought-prone areas, which might not account for micro-climatic variations or dynamic changes in these areas.
+- The data collection and preprocessing were a significant challenge, highlighting the difficulty of obtaining high-quality, structured weather data.
+- The model is limited to the four weather parameters it was trained on and does not account for other factors that might affect crop yield, such as pest infestations or soil properties.
+
+---
+
+## Future Directions
+- Future work could involve collecting and integrating real-time sensor data to create an online learning model, which would provide more immediate and accurate forecasts.
+- Further research could explore cybersecurity issues related to real-time data collection to ensure the integrity of the information.
+- The model could be expanded to include other agricultural parameters, such as soil quality and pest data, to provide more comprehensive recommendations.
+
+---
+
+## Keywords
+- Agricultural Recommendation
+- Weather Forecast
+- Deep Learning
+- Bi-LSTM
+- Agriculture Data Analytics
+- Time Series Forecasting
+- Bangladesh
+- Stacked Bi-LSTM

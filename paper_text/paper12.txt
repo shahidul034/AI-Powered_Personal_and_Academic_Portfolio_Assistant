@@ -1,0 +1,79 @@
+# Designing a Rule-Based Stemmer for the Bangla Language
+
+---
+
+## Abstract
+This paper presents a rule-based algorithm for stemming Bangla words to address the lack of effective and full-phase stemming solutions for the language. Stemming is a crucial preprocessing step in Natural Language Processing (NLP) that normalizes inflected words to their root form. The proposed approach categorizes rules for inflection detection into three main groups: verb inflection (বিভক্তি), number inflection (বচন), and miscellaneous. An exception list is also developed to handle words that should not be stemmed, preventing ambiguity and loss of meaning. The algorithm was tested on text from a novel and a news article, achieving promising accuracy rates of **94.35%** and **91.47%** respectively. The authors suggest that the performance can be further improved by expanding the rule set.
+
+---
+
+## Problem Statement
+Bangla is a highly inflected language, and its morphological structure presents significant challenges for designing an effective stemmer. A major problem is that while many algorithms exist for other languages, there is no efficient and comprehensive stemming solution for Bangla. Existing works are often in their "infant stage" or rely on less accurate brute-force methods. The lack of a robust stemmer is a major hindrance to the development of Bangla language understanding (NLU) and other NLP applications, such as text mining, sentiment analysis, and spam filtering.
+
+---
+
+## Objectives
+- To develop a rule-based algorithm for Bangla stemming.
+- To create a comprehensive set of rules for inflection detection, focusing on verbs, numbers, nouns, and pronouns.
+- To develop an exception list to avoid incorrectly stemming words that are not inflected.
+- To implement and test the proposed algorithm on Bangla texts to evaluate its performance and accuracy.
+- To contribute a practical solution that can be applied to various NLP tasks.
+
+---
+
+## Methodology
+The proposed methodology is centered on a rule-based approach for identifying and removing suffixes to find the root word.
+
+1.  **Rule Development**: The rules for stemming are based on a detailed analysis of Bangla grammar. The suffixes are categorized into three groups:
+    * **Number Inflection (বচন)**: Rules for suffixes that indicate plurality or singularity, such as `টি`, `খানা`, `গুলো`, and `রা`.
+    * **Verb Inflection (বিভক্তি)**: Rules for suffixes related to verbs, such as `ছি`, `ছে`, and `লাম`.
+    * **Miscellaneous (বিবিধ)**: Rules for other suffixes that do not fall into the above two categories, such as `তে`, `টাই`, and `ও`.
+
+2.  **Algorithm Implementation**: An algorithm, `BanglaStemmer()`, was designed to apply these rules systematically. The process involves:
+    * **Tokenization**: The input sentence or paragraph is first broken down into individual words.
+    * **Stop Word Removal**: Common Bangla stop words are removed from the tokenized words.
+    * **Suffix Removal**: The algorithm iteratively checks for and removes suffixes based on the rules, starting from the end of each word.
+    * **Exception Handling**: Before applying the rules, the algorithm checks if a word is in a predefined exception list. This list contains words that might appear to have a suffix but are actually root words themselves, such as `খিটিমিটি` and `বৃষ্টি`.
+
+3.  **Performance Evaluation**: The algorithm's performance was evaluated using two datasets: text from the novel "যোগাযোগ" by Rabindranath Thakur (D1) and an article from bd-pratidin.com (D2). A confusion matrix was used to calculate accuracy, which compared the number of words that were correctly stemmed, falsely stemmed, and those that should have been stemmed but were not.
+
+---
+
+## Key Findings
+- The rule-based stemmer achieved an accuracy of **94.35%** on the novel-based dataset (D1) and **91.47%** on the news article-based dataset (D2).
+- The use of a comprehensive exception list was crucial for the stemmer to work correctly and avoid ambiguity.
+- The proposed approach is general and can be applied to any Bangla word.
+
+---
+
+## Contributions
+- A novel rule-based algorithm for stemming Bangla words.
+- A set of rules and an exception list specifically designed for Bangla's morphological structure.
+- A practical implementation of the stemmer that can be used for a wide range of NLP applications.
+
+---
+
+## Applications
+- The algorithm can be applied to **text mining** for sentiment analysis, **Parse design**, and **Spam filtering**.
+- The stemming process helps in information retrieval and increases the recall rate of text mining.
+
+---
+
+## Limitations
+- The accuracy of the system is directly tied to the completeness of the rule set.
+- The paper does not provide an extensive comparison with existing stemmers to establish its state-of-the-art performance.
+
+---
+
+## Future Directions
+- The authors plan to make a parallel version of the algorithm to improve its response time.
+- The accuracy can be further enhanced by increasing the number of terms in the rules.
+
+---
+
+## Keywords
+- stemming 
+- text normalization 
+- root word detection 
+- corpus 
+- NLP 

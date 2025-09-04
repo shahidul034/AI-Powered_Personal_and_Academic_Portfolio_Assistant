@@ -1,0 +1,81 @@
+# Deep Learning Model for Non-Invasive Hypertension Classification
+
+---
+
+## Abstract
+This study presents a novel deep learning method for the non-invasive classification of hypertension using Photoplethysmography (PPG) signals. PPG is a cost-effective technique for measuring blood volume changes, and the researchers propose a hybrid model that combines a **Convolutional Neural Network (CNN)** and a **Gated Recurrent Unit (GRU)**. The model was trained and evaluated on PPG signals from 219 subjects. The CNN component automatically extracts relevant features from the signals, which are then processed by the GRU to perform multi-class classification of hypertension. The proposed model achieved an accuracy of **85.00%**, a recall of **84.44%**, a precision of **87.77%**, and an F1-score of **86.08%**, outperforming several existing methods. The goal of this research is to provide a simple, accurate, and inexpensive tool for hypertension detection.
+
+---
+
+## Problem Statement
+Hypertension, or high blood pressure, is a major global health concern and a leading cause of fatal conditions like heart attacks and strokes. Regular blood pressure (BP) checks are essential for prevention and management, but most traditional methods, such as cuff-based devices and oscillometry, are often invasive, expensive, and uncomfortable for patients. This creates a need for a convenient, non-invasive, and cost-effective method for continuous BP monitoring. While some studies have explored using PPG signals for BP classification, there is still room for improvement in developing robust deep learning models that can automatically extract features and achieve high accuracy in multi-class classification.
+
+---
+
+## Objectives
+- To propose a non-invasive, simple, and inexpensive method for hypertension detection using PPG signals.
+- To design and develop a hybrid deep learning model combining a **Convolutional Neural Network (CNN)** and a **Gated Recurrent Unit (GRU)**.
+- To demonstrate that this model can automatically and effectively extract features from PPG signals for classification.
+- To achieve high-performance metrics (accuracy, precision, recall, and F1-score) and compare the results with existing methods.
+- To perform multi-class classification to detect different stages of hypertension.
+
+---
+
+## Methodology
+The researchers followed a systematic methodology to create and evaluate their proposed model:
+
+1.  **Data Collection**: The study used a dataset from Liang et al. that included PPG signals and demographic information (age, gender, height, and weight) from 219 subjects. The dataset contained 657 PPG signal samples, each with a duration of 2.1 seconds and 2,100 data points sampled at 1,000 Hz.
+
+2.  **Signal Preprocessing**: The raw PPG signals were preprocessed to remove noise and artifacts.
+    - **Data Scaling**: Z-score normalization was applied to limit the amplitude of the data.
+    - **Signal Filtration**: A Butterworth low-pass filter with a cutoff frequency of 15 Hz was used to remove high-frequency noise and baseline drift.
+
+3.  **Model Architecture**: The proposed model is a hybrid architecture of a CNN and a GRU.     - **Feature Extraction (CNN)**: The model uses two 1D convolutional layers with ReLU activation and max-pooling to automatically extract features from the PPG signals.
+    - **Classification (GRU)**: The extracted features are flattened and fed into a GRU layer with 256 memory cells. This is followed by a dropout layer and three fully connected dense layers with 128, 64, and 4 output neurons, respectively, for the final multi-class classification. The output classes correspond to "Normal," "Prehypertension," "Stage 1 Hypertension," and "Stage 2 Hypertension."
+
+4.  **Training and Evaluation**: The model was trained for 120 epochs with a batch size of 32 using the Adam optimizer and a learning rate of 0.001. A **Stratified 10-Fold Cross-Validation** approach was used to ensure that each fold had a balanced representation of all classes. Performance was evaluated using standard metrics, including Accuracy, Precision, Recall, and F1-score. A confusion matrix and micro-average ROC curves were also generated.
+
+---
+
+## Key Findings
+- **High Performance**: The proposed CNN-GRU hybrid model achieved a high accuracy of **85.00%** on the test data, with a precision of 87.77%, a recall of 84.44%, and an F1-score of 86.08%.
+- **Outperformed Existing Methods**: The model's performance was superior to several existing methods, including SVM, ResNetCNN + Bi-LSTM, and Xception + Bi-LSTM, which had lower accuracy and F1-scores.
+- **Effective Feature Extraction**: The CNN component of the hybrid model was effective in automatically extracting relevant features from the raw PPG signals, which is a crucial step for achieving high accuracy in classification tasks.
+- **Overfitting Prevention**: The training and validation loss and accuracy curves showed that the model avoided overfitting and maintained a stable performance. 
+---
+
+## Contributions
+- A novel hybrid deep learning model (CNN-GRU) specifically designed for non-invasive hypertension classification from PPG signals.
+- A method for automated feature extraction from PPG signals using a convolutional layer, eliminating the need for manual feature engineering.
+- A demonstration of a highly accurate and robust system for multi-class hypertension classification.
+
+---
+
+## Applications
+- The proposed method can be used to create a simple, inexpensive, and comfortable device for the continuous, non-invasive monitoring of blood pressure.
+- It can serve as a diagnostic tool for the early detection of hypertension, helping patients with prevention, evaluation, and medication.
+- The model can be integrated into wearable devices for regular health monitoring.
+
+---
+
+## Limitations
+- The study used a limited dataset of 219 subjects, which may not be representative of a wider, more diverse population.
+- The paper suggests that a larger dataset is needed to further improve the model's performance.
+
+---
+
+## Future Directions
+- Future work should focus on using a larger and more diverse dataset to enhance the reliability and generalizability of the model.
+- The researchers plan to explore other deep learning methods to potentially achieve even better accuracy.
+
+---
+
+## Keywords
+- Hypertension
+- Photoplethysmography (PPG)
+- Signal Processing
+- Features Extraction
+- Convolutional Neural Network (CNN)
+- Gated Recurrent Unit (GRU)
+- Deep Learning
+- Non-invasive

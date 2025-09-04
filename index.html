@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal AI Assistant</title>
+    <link rel="stylesheet" href="modern-chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-nav">
+                <a href="../index.html" class="home-button">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="sidebar-header">
+                <h2>Settings</h2>
+            </div>
+            <div class="sidebar-controls">
+                <div class="settings-control">
+                    <label for="temp-slider">Temperature</label>
+                    <div class="slider-container">
+                        <input type="range" id="temp-slider" min="0" max="1.5" step="0.1" value="0.1">
+                        <span id="temp-value" class="setting-value">0.1</span>
+                    </div>
+                </div>
+                <div class="settings-control">
+                    <label for="tokens-slider">Max Tokens</label>
+                    <div class="slider-container">
+                        <input type="range" id="tokens-slider" min="100" max="4000" step="50" value="500">
+                        <span id="tokens-value" class="setting-value">500</span>
+                    </div>
+                </div>
+
+                <div class="settings-control">
+                    <label for="context-selector">Select Context (Research Paper or Personal Information)</label>
+                    <select id="context-selector">
+                        <option value="personal" selected>Personal Profile</option>
+                    </select>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <button id="menu-toggle-btn" class="menu-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div id="context-banner" class="context-banner" role="status" aria-live="polite" aria-atomic="true"></div>
+
+            <div id="chat-box"></div>
+            <!-- Context switch banner -->
+            <div id="context-banner" class="context-banner" role="status" aria-live="polite" aria-atomic="true"></div>
+
+            <div id="chat-box"></div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-area">
+                    <textarea id="user-input" placeholder="Ask a question..." rows="1"></textarea>
+                    <button id="send-btn" title="Send Message (Enter)">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="app-info">Ask Me Anything — Personal AI Assistant (Powered by gpt-oss-20B) </p>
+            </div>
+        </main>
+        <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="chatbotV2.js"></script>
+</body>
+
+</html>

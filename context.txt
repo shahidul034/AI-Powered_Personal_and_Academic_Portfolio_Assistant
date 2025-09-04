@@ -1,0 +1,326 @@
+## Md. Shahidul Salim
+
+**Current Position:**  
+- PhD Student, University of Massachusetts Lowell  
+- Research Assistant, Miner School of Computer and Information Sciences, UMass Lowell (Jan 2025–Present)  
+- Former Lecturer (on study leave), Khulna University of Engineering & Technology (KUET), Dept. of Computer Science & Engineering (Mar 2022–Jan 2025)  
+- Former Lecturer, Uttara University, Dept. of Computer Science & Engineering (Apr 2021–Mar 2022)
+
+**Recent Research Focus:**  
+- Biomedical machine translation and summarization using large language models (LLMs), especially for electronic health records  
+- Multi-agent systems in LLMs for enhanced collaboration and problem-solving  
+- Ongoing research in uncertainty quantification in LLMs and controlling text readability for different users in medical contexts.
+
+**Academic Experience:**  
+- Research Assistant at UMass Lowell under Dr. Hong Yu  
+- Undergraduate research with Prof. Dr. K. M. Azharul Hasan  
+- Collaboration with Dr. Sheikh Imran Hossain, Associate Professor
+
+**Publications & Contributions:**  
+- Multiple journal articles and conference papers (including EMNLP, WMT (World Machine Translation) and EACL)  
+- Journals under review: EMNLP,EACL, WMT, Data in Brief and SoftwareX
+
+**Technical Skills**  
+Languages: Python, C/C++, HTML/CSS, JavaScript, SQL  
+ML/AI Frameworks & Tools: PyTorch, TensorFlow, Keras, scikit-learn, Hugging Face Transformers, Unsloth AI, PEFT, Langchain, Gradio, Streamlit  
+Data/Dev Tools: Git, Linux, LaTeX  
+Other Expertise: Docker, FastAPI, FLASK, FAISS/Chroma, Weights & Biases, Data Structures, Algorithms
+
+**Education:**  
+- B.Sc., Khulna University of Engineering & Technology (2016–2020), CGPA: 3.86/4.00 (4th out of 120)  
+- HSC, CUET School and College (2013–2015), GPA: 5.00/5.00  
+- SSC, Rangunia Majumderkhil High School (2011–2013), GPA: 5.00/5.00
+
+**ACHIEVEMENTS:**  
+- Dean’s List Award for academic excellence, KUET, Bangladesh (2016, 2017, 2018, 2019)
+- 2nd Runner Up, Inter-University Poster Presentation, KUET, Bangladesh (2017)
+- National Level Scholarship, Bangladesh (2015)
+**SERVICES:**
+- Paper Reviewer: External Reviewer, AAAI 2024
+**CV Link**
+- https://drive.google.com/file/d/1iMaH0QGV6bKWPrutrJs7jL7sYCtc_Ujg/view
+**Personal Interests:**  
+- Enjoys playing FIFA, traveling, and watching sci-fi/thriller movies and TV series (favorites: Interstellar, Avengers, Dark, Stranger Things, Prison Break)
+**Contact Information:**
+Email: mdshahidul_salim@student.uml.edu | shahidulshakib034@gmail.com
+LinkedIn: https://www.linkedin.com/in/shahidulshakib034/
+---
+
+TEACHING EXPERIENCE
+
+1. Khulna University of Engineering & Technology (KUET)
+   - Position: Lecturer (on study leave)
+   - Department: Computer Science & Engineering
+   - Duration: March 2022 – January 2025
+   - Courses Conducted: Natural Language Processing (NLP), Machine Learning (ML), Database Systems, Applied Statistics
+
+2. Uttara University
+   - Position: Lecturer
+   - Department: Computer Science & Engineering
+   - Duration: April 2021 – March 2022
+   - Courses Conducted: Machine Learning (ML), Artificial Intelligence, Object Oriented Programming, Data Structures and Algorithms
+
+---
+RESEARCH INTERESTS
+
+- Machine Translation
+- Summarization
+- Uncertainty Quantification in Large Language Models (LLMs)
+- Multi-Agent Systems
+- Generative AI
+- Bioinformatics
+- Pretraining and Finetuning in LLMs
+- Multi-GPU Training
+
+---
+RECENT UPDATES
+
+2025
+- Accepted (EMNLP 2025): Enhancing English-to-Spanish Medical Translation of Large Language Models Using Enriched Chain-of-Dictionary Framework
+- Submitted (WMT 2025): Less is More: Uncertainty-Driven Knowledge Filtering for Long-Context Medical MT
+- Accepted (CLEF 2025): Enhancing Multilingual Medical Summarization via Contextual Keyword Augmentation
+- Submitted for ARR Review (July 2025): A Comparative Analysis of English-to-Bangla Machine Translation Systems and Quality Estimation for Low-Resource Data Creation, Applied to Conversational Question Answering
+- Submitted for ARR Review (July 2025): DMoEBERT: Efficient Natural Language Inference in Resource-Constrained Environments
+
+Webinar
+- Conducted Webinar: "Modern NLP with Large Language Models: Techniques, Tools, and Challenges"
+  - Video: https://drive.google.com/file/d/18Jcgt_3wVHsLB9W-2m49bOJoqSJGfBWd/view?usp=sharing
+  - Resources: https://github.com/shahidul034/My-portfolio-website/tree/main/misc/webiner_LLM
+
+---
+
+ONGOING RESEARCH
+
+- Controlling text readability for different users in medical contexts
+- Rare disease diagnosis human-AI collaboration
+- Agent-based biomedical translation and summarization
+- Comparing prompt-based and standard fine-tuning for Bangla text classification
+
+---
+SELECTED PUBLICATIONS: NATURAL LANGUAGE PROCESSING (NLP)
+
+1. Md Shahidul Salim, Lianne Fu, Arav Adikesh Ramakrishnan, Sunjae Kwon, Zonghai Yao, Hong Yu.
+   "Enhancing English-to-Spanish Medical Translation of Large Language Models Using Enriched Chain-of-Dictionary Framework."
+   Accepted at EMNLP 2025.
+
+2. Md Shahidul Salim, Lianne Fu, Arav Adikesh Ramakrishnan, Sunjae Kwon, Zonghai Yao, Hong Yu.
+   "Enhancing Multilingual Medical Summarization via Contextual Keyword Augmentation."
+   Accepted at CLEF 2025.
+
+3. Md. Shahidul Salim, Sk Imran Hossain, Tanim Jalal, Dhiman Kumer Bose, Mohammad Jahid Ibna Basher.
+   "LLM based QA chatbot builder: A generative AI-based chatbot builder for question answering."
+   SoftwareX, vol. 29, 2025, Art. 102029, ISSN 2352-7110.
+   DOI: https://doi.org/10.1016/j.softx.2024.102029
+   Paper: https://www.sciencedirect.com/science/article/pii/S235271102400400X
+   Github: https://github.com/shahidul034/LLM-based-QA-chatbot-builder
+
+4. Md. Shahidul Salim, Sk Imran Hossain.
+   "An Applied Statistics dataset for human vs AI-generated answer classification."
+   Data in Brief, 2024, 110240, ISSN 2352-3409.
+   DOI: https://doi.org/10.1016/j.dib.2024.110240
+   Paper: https://www.sciencedirect.com/science/article/pii/S2352340924002117
+   Github: https://github.com/shahidul034/An-Applied-Statistics-Dataset-for-Human-vs-AI-Generated-Answer-Classification
+
+5. Asif Mohammed Saad, Umme Niraj Mahi, Md. Shahidul Salim, Sk Imran Hossain.
+   "Bangla news article dataset."
+   Data in Brief, 2024, 110874, ISSN 2352-3409.
+   DOI: https://doi.org/10.1016/j.dib.2024.110874
+   Paper: https://www.sciencedirect.com/science/article/pii/S2352340924008382
+
+---
+SELECTED PUBLICATIONS: MACHINE LEARNING (ML)
+
+1. Arifur Rahman, Sakib Zaman, Shahriar Parvej, Pintu Chandra Shill, Md. Shahidul Salim, Dola Das.
+   "Fake News Detection: Exploring the Efficiency of Soft and Hard Voting Ensemble."
+   Procedia Computer Science, vol. 252, 2025, pp. 748–757, ISSN 1877-0509.
+   DOI: https://doi.org/10.1016/j.procs.2025.01.035
+   Paper: https://www.sciencedirect.com/science/article/pii/S1877050925000353
+
+2. Md Zubair, Md. Nafiz Ishtiaque Mahee, Khondaker Masfiq Reza, Md. Shahidul Salim, Nasim Ahmed.
+   "Climate data dynamics: A high-volume real world structured weather dataset."
+   Data in Brief, vol. 57, 2024, Art. 111156, ISSN 2352-3409.
+   DOI: https://doi.org/10.1016/j.dib.2024.111156
+   Paper: https://www.sciencedirect.com/science/article/pii/S2352340924011181
+
+---
+
+OTHER PUBLICATIONS: NATURAL LANGUAGE PROCESSING (NLP)
+
+1. Dhiman Bose, Md. Shahidul Salim.
+   "Suggesting Bangla Words using Masked Language Model."
+   Proceedings of the 3rd International Conference on Computing Advancements (ICCA ’24), pp. 429–434, 2025, Association for Computing Machinery.
+   DOI: https://doi.org/10.1145/3723178.3723235
+   Paper: https://dl.acm.org/doi/pdf/10.1145/3723178.3723235
+
+2. Nabil, A., Das, D., Salim, M. S., Arifeen, S., Fattah, H. M. A.
+   "Bangla emergency post classification on social media using transformer based bert models."
+   6th International Conference on Electrical Information and Communication Technology (EICT 2023). (Accepted)
+   Paper: https://drive.google.com/file/d/1i_WAnFPTzB3I_OQ4SQyRsqRi0n3RmvD2/view?usp=sharing
+
+3. Salim, M. S., Murad, H., Das, D., Ahmed, F.
+   "BanglaGPT: A Generative Pretrained Transformer-Based Model for Bangla Language."
+   2023 International Conference on Information and Communication Technology for Sustainable Development (ICICT4SD), Dhaka, Bangladesh, 2023, pp. 56-59.
+   DOI: 10.1109/ICICT4SD59951.2023.10303383
+   Paper: https://ieeexplore.ieee.org/document/10303383
+
+4. S. Salim, T. Islam, R. Zannat, N. Mia, M. Fuad, H. Murad.
+   "Towards Developing a Transformer-Based Bangla Typing Error Correction Model: A Deep Learning-Based Approach."
+   2023 International Conference on Information and Communication Technology for Sustainable Development (ICICT4SD), Dhaka, Bangladesh, 2023, pp. 75-78.
+   DOI: 10.1109/ICICT4SD59951.2023.10303361
+   Paper: https://ieeexplore.ieee.org/abstract/document/10303361
+
+5. T. Ahmed, S. Hossain, M. S. Salim, A. Anjum, K. M. Azharul Hasan.
+   "Gold Dataset for the Evaluation of Bangla Stemmer."
+   2021 5th International Conference on Electrical Information and Communication Technology (EICT), Khulna, Bangladesh, 2021, pp. 1-6.
+   DOI: 10.1109/EICT54103.2021.9733662
+   Paper: https://ieeexplore.ieee.org/document/9733662
+
+6. M. S. Salim Shakib, T. Ahmed, K. M. Azharul Hasan.
+   "Designing a Bangla Stemmer using rule based approach."
+   2019 International Conference on Bangla Speech and Language Processing (ICBSLP), Sylhet, Bangladesh, 2019, pp. 1-4.
+   DOI: 10.1109/ICBSLP47725.2019.201533
+   Paper: https://ieeexplore.ieee.org/document/9084043
+   Github: https://github.com/shahidul034/Designing-a-Bangla-Stemmer-using-rule-based-approach
+
+---
+
+OTHER PUBLICATIONS: MACHINE LEARNING (ML)
+
+1. Trisha, Shahid, Md. Shahidul Salim, Jeba, Mahbub.
+   "Automated Classification of Gastrointestinal Polyps from Endoscopic Images Using a Deep Learning Approach."
+   2024 International Conference on Recent Progresses in Science, Engineering and Technology (ICRPSET 2024). (Accepted)
+   Paper: https://ieeexplore.ieee.org/document/10955865
+
+2. Hossain, L., Hossain, I., Salim, M. S., Raju, S. M. T. U., Saha, J.
+   "A novel technique for classification of motor imagery EEG signal based on deep learning approaches."
+   Proceedings of the 2nd International Conference on Big Data, IoT and Machine Learning (BIM 2023). (Accepted)
+   Paper: https://drive.google.com/file/d/14JswdTGWuJBS4hbygGRaEd-AeBHMVXq7/view?usp=sharing
+
+3. Ashiqussalehin, M., Jahan, K., Rahaman, M., Salim, M.
+   "Human Abnormal Behavior Detection Using Convolution Neural Network."
+   Specialusis Ugdymas, 1(43), 4076–4083, 2022.
+   Paper: http://www.sumc.lt/index.php/se/article/view/481/420
+
+4. R. T. H. Promi, R. A. Nazri, M. S. Salim, S. M. T. U. Raju.
+   "A Deep Learning Approach for Non-Invasive Hypertension Classification from PPG Signal."
+   2023 International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM), Gazipur, Bangladesh, 2023, pp. 1-5.
+   DOI: 10.1109/NCIM59001.2023.10212940
+   Paper: https://ieeexplore.ieee.org/document/10212940
+
+---
+
+SELECTED PROJECTS
+
+1. University Information LLM Chatbot
+   - Description: LLM-powered chatbot for university information (KUET)
+   - Link: chatbot/KUET/kuet.html
+   - Technologies: Python, LLM, Prompt Engineering, VLLM, Pytorch
+   - Category: ml-nlp
+
+2. LLM based QA Chatbot Builder
+   - Description: Tool to construct question-answering chatbots
+   - Link: https://github.com/shahidul034/LLM-based-QA-chatbot-builder
+   - Technologies: Python, LLM, Langchain, Gradio, Pytorch
+   - Category: ml-nlp
+
+3. Medical LLM Chat Bot
+   - Description: Chat with PDF medical documents using LlamaV2
+   - Link: https://github.com/shahidul034/Chat-with-pdf-using-LLM-langchain-and-streamlit
+   - Technologies: Python, LLM, Langchain, Streamlit, Pytorch
+   - Category: ml-nlp
+
+4. KUET Chat Bot
+   - Description: Chatbot for information about KUET
+   - Link: https://github.com/shahidul034/KUET-chatbot
+   - Technologies: Python, NLP
+   - Category: ml-nlp
+
+5. Efficient Backlog Routine Generator
+   - Description: Routine generator web app built with Python and Flask
+   - Link: https://github.com/shahidul034/Backlog-routine-web-app
+   - Technologies: Python, Flask, Algorithm
+   - Category: web
+
+6. Statistics Exam
+   - Description: Statistics exam generation system using Python and Flask
+   - Link: https://github.com/shahidul034/statistics-exam-for-student-using-flask
+   - Technologies: Python, Flask
+   - Category: web
+
+7. Counterfeit Note Detection
+   - Description: CNN-based fake Bangladeshi banknote detection
+   - Link: https://github.com/shahidul034/Fake-Bangladeshi-note-detection-using-CNN
+   - Technologies: CNN, Python, Image Processing
+   - Category: ml-nlp
+
+---
+OTHER PROJECTS
+
+1. Brain Tumor Detection using CNN
+   - Description: AI-based approach for accurate brain tumor diagnosis
+   - Link: https://github.com/shahidul034/brain-tumor-detection-using-CNN
+   - Technologies: CNN, Python, Image Processing
+   - Category: ml-nlp
+
+2. Fake Bangladeshi Currency Detection
+   - Description: Comparative analysis using OpenCV and MATLAB
+   - Link: https://github.com/shahidul034/Fake-Bangladeshi-currency-detection-using-openCV
+   - Technologies: Python, OpenCV, MATLAB
+   - Category: ml-nlp
+
+3. Building a Social Media Website
+   - Description: Dynamic social media website using ASP.NET and C#
+   - Link: https://github.com/shahidul034/main_project-social-media-website
+   - Technologies: ASP.NET, C#, HTML, CSS, JavaScript
+   - Category: web
+
+4. Daily Expense Management on iOS
+   - Description: Mobile app for financial tracking
+   - Link: https://github.com/shahidul034/Daily-Expense-iOS
+   - Technologies: iOS, Xcode, Swift
+   - Category: mobile-systems
+
+5. Booklist
+   - Description: Mobile app for KUET academic booklists with PDF links
+   - Link: https://github.com/shahidul034/BOOKLIST_ANDROID_PROJECT
+   - Technologies: Android Studio, Java
+   - Category: mobile-systems
+
+6. Secure File Locker
+   - Description: File locker using RSA encryption algorithm
+   - Link: https://github.com/shahidul034/File-locker-using-python
+   - Technologies: Security, Python, RSA
+   - Category: mobile-systems
+
+7. Hello OS
+   - Description: Simple operating system project using Grub and QEMU
+   - Link: https://github.com/shahidul034/OS-project-final
+   - Technologies: C++, Grub, QEMU
+   - Category: mobile-systems
+
+8. Windmill Simulation
+   - Description: Computer graphics project (windmill simulation)
+   - Link: https://github.com/shahidul034/Windmill-Computer-Graphics-Project
+   - Technologies: C++, OpenGL
+   - Category: mobile-systems
+
+9. Smart Home Automation with IoT
+   - Description: Home automation using NodeMCU (ESP8266) and Flask
+   - Link: https://github.com/shahidul034/Home-Automation-using-IoT
+   - Technologies: IoT, Python, Flask
+   - Category: iot
+
+10. Anonymity-Preserving Post Web App
+    - Description: Secure content sharing web app
+    - Link: https://github.com/shahidul034/anonymous-send-message
+    - Technologies: Python, Flask, MongoDB
+    - Category: web
+
+
+
+
+
+
+
+
+

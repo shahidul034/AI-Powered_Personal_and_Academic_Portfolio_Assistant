@@ -1,0 +1,88 @@
+# Word Suggestion for Bangla Language Using a Masked Language Model
+
+---
+
+## Abstract
+This study investigates the use of a fine-tuned **Bangla-BERT** model with an enhanced **Masked Language Modeling (MLM)** technique to suggest words in Bangla text. While transformer-based models like BERT have been revolutionary for Natural Language Processing (NLP), a key challenge for low-resource languages like Bangla is the lack of task-specific datasets. To address this, the research combines two advanced masking strategies, **'Whole Word Masking'** and **'Dynamic Masking'**, to improve the model's contextual understanding. This approach moves beyond the traditional Word-Piece masking used in the original Bangla-BERT model. The fine-tuned model achieved a superior perplexity score of **5.75**, demonstrating its effectiveness in predicting missing words compared to several other monolingual and multilingual BERT-based models.
+
+---
+
+## Problem Statement
+The field of Natural Language Processing (NLP) is experiencing growing demand for tools that can suggest words or phrases, which have broad applications in grammar correction, text composition, and translation. While advanced models like BERT have become the standard for such tasks in high-resource languages, their performance for low-resource languages like Bangla is hindered by a lack of task-specific, annotated datasets. The existing Bangla-BERT model relies on a basic Word-Piece masking strategy and static masking, which can limit the model's ability to capture deep contextual information and generalize to new data. A more robust approach is needed to improve word suggestion capabilities for the Bangla language.
+
+---
+
+## Objectives
+- To develop and fine-tune a **Bangla-BERT model** for the task of word suggestion in Bangla text.
+- To improve the model's performance by implementing **'Whole Word Masking'** and **'Dynamic Masking'** as a replacement for traditional Word-Piece masking and static masking.
+- To create a new benchmark dataset for evaluating masked language models in Bangla.
+- To compare the performance of the fine-tuned model with several other existing monolingual and multilingual BERT-based models.
+
+---
+
+## Methodology
+The research followed a structured methodology to achieve its objectives:
+
+1.  **Dataset Collection and Preprocessing**: Raw text data was collected from various online sources, including newspaper articles, blogs, and social media posts. The data was rigorously preprocessed to ensure quality, which involved:
+    - Removing noisy data (unwanted characters and symbols).
+    - Filtering out texts containing words from other languages (mainly English).
+    - Removing texts with a high frequency of punctuation marks.
+    - Skipping any text shorter than 100 characters to ensure sufficient contextual information for training.
+
+2.  **Tokenizer Design**: A subword-based **Word-Piece tokenization** algorithm was used to break down the preprocessed text into smaller units. This method is effective for handling out-of-vocabulary (OOV) words by representing them as a combination of known subwords.
+
+3.  **Data Chunking and Masking**: The tokenized text was concatenated into a single continuous block and then split into chunks of a consistent size (128 tokens) to optimize training and memory usage. A crucial part of the methodology was the implementation of two enhanced masking strategies:
+    - **Whole Word Masking (WWM)**: Instead of masking individual subword tokens, this method masks the entire word. This encourages the model to learn broader contextual dependencies.
+    - **Dynamic Masking**: Unlike the original BERT's static masking, this approach varies the masked words in each training epoch. This prevents the model from simply memorizing the positions of masked words and forces it to learn more robust language representations.
+
+4.  **Model Architecture and Fine-tuning**: The study used a fine-tuned **Bangla-BERT model**, which is based on the BERT architecture. The model was trained with the newly masked dataset using a batch size of 64 and a learning rate of 2e-5. Training was conducted for nine epochs on a GeForce RTX 3090 GPU, which took approximately 22 hours.
+
+5.  **Evaluation**: The model's performance was evaluated using **perplexity**, a common metric for language models. A lower perplexity score indicates higher certainty and better performance in predicting words. The model was compared against several other models, including `sagorsarker/bangla-bert-base`, `csebuetnlp/banglabert_generator`, `bert-base-multilingual-cased`, `distilbert/distilbert-base-multilingual-cased`, and `FacebookAI/xlm-roberta-base`.
+
+---
+
+## Key Findings
+- The fine-tuned Bangla-BERT model achieved a perplexity score of **5.75**, which was the lowest among all compared models.
+- This perplexity score was significantly better than that of the original `sagorsarker/bangla-bert-base` model (36.70) and multilingual models like `bert-base-multilingual-cased` (57.32).
+- The study demonstrated that integrating **Whole Word Masking** and **Dynamic Masking** significantly improves the model's ability to understand context and predict words accurately in Bangla.
+- The use of a carefully preprocessed dataset and a consistent chunking approach contributed to the model's high performance and training stability. 
+---
+
+## Contributions
+- **A fine-tuned Bangla-BERT model** that achieves state-of-the-art performance for word suggestion in Bangla.
+- The successful implementation and validation of **Whole Word Masking and Dynamic Masking** on a Bangla language model, which were not previously available for this domain.
+- The creation of a new, high-quality **benchmark dataset** for evaluating masked language models in Bangla.
+- The research provides strong evidence that a language-specific model with enhanced masking techniques can outperform universal multilingual models for low-resource languages.
+
+---
+
+## Applications
+- The model can be used to improve **word suggestion features** in various applications like text editors, mobile keyboards, and email composers for Bangla users.
+- It can be a foundational component for building tools for **grammatical error correction** and writing assistance in Bangla.
+- The dataset and methodology can be used by other researchers for further work in Bangla NLP, including downstream tasks like **Question Answering** and **text summarization**.
+
+---
+
+## Limitations
+- The research primarily focuses on a single model architecture (Bangla-BERT) and specific masking techniques.
+- The study did not compare its approach with other advanced masking techniques like N-gram or multilevel masking, which are not widely available for Bangla.
+- The synthetic nature of some of the data might not fully capture the nuances of all real-world text.
+
+---
+
+## Future Directions
+- Future work could explore the application of other advanced masking techniques for Bangla, such as N-gram or entity-level masking.
+- The model could be trained with a larger and more diverse dataset to further improve its performance.
+- The fine-tuned model could be applied to and evaluated on other downstream NLP tasks to demonstrate its broader utility.
+
+---
+
+## Keywords
+- Bangla NLP
+- Masked Language Model (MLM)
+- BanglaBERT
+- Whole Word Masking
+- Dynamic Masking
+- Perplexity
+- Text Generation
+- Word Suggestion

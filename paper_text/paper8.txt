@@ -1,0 +1,88 @@
+# Improving Multilingual Medical Summarization with MedCOD
+
+---
+
+## Abstract
+This paper introduces a novel framework, **MedCOD**, designed to enhance multilingual medical text summarization, particularly for low-resource languages. The framework operates by using a large language model (LLM), **Qwen2.5-14B**, to extract medical keywords from clinical texts. These keywords are then translated into multiple target languages using the **NLLB 3.3B** model, and their quality is verified through back-translation and semantic checks. The resulting multilingual keyword chains are added to the input prompts as a structured context. The study evaluates MedCOD's effectiveness with two open-source LLMs, Qwen2.5-14B and Phi-4B, in both zero-shot and fine-tuned settings. The results show that MedCOD significantly boosts summarization performance, especially in non-English languages, with both prompt augmentation and fine-tuning contributing to the gains.
+
+---
+
+## Problem Statement
+The widespread adoption of Electronic Health Records (EHRs) has increased clinical documentation, but patients with limited English proficiency often struggle to access and understand this information. This language barrier can lead to misunderstandings, reduced medication adherence, and poor health outcomes. While large language models (LLMs) have shown promise in general text summarization, their performance in the medical domain is often limited by a lack of understanding of specialized terminology and complex relationships. The problem is compounded in non-English languages, which are often underrepresented in pre-training corpora, causing models to underperform or even fail to generate summaries in the correct language.
+
+---
+
+## Objectives
+- To introduce a new framework called **MedCOD** that improves multilingual medical text summarization by augmenting prompts with a structured, keyword-based context.
+- To use this framework to enhance the summarization capabilities of open-source LLMs, particularly for languages where models typically underperform, such as Spanish, French, and Portuguese.
+- To explore the effects of both prompt-level contextual augmentation and fine-tuning on model performance in multilingual medical summarization.
+- To evaluate the framework's effectiveness using widely-accepted metrics for summarization, including ROUGE-L-Sum and BERTScore.
+
+---
+
+## Methodology
+The methodology for the MedCOD framework involves several key steps to prepare data, enrich context, and train models:
+
+1.  **Dataset Preparation**: The study uses the **MultiClinSUM** dataset, which includes clinical case reports in four languages: English, Spanish, French, and Portuguese. The dataset is divided into three subsets: a large training set of 25,902 full-text/summary pairs per language, a test set of around 3,400 reports per language, and a smaller validation set of 100 pairs per language used for ablation studies.
+    
+2.  **Keyword Extraction and Translation**: The **Qwen2.5-14B** model is used as a knowledge base (**LLM-KB**) to extract medical keywords from the full-text documents in the test and validation sets. These keywords are then translated into five languages (English, German, Spanish, French, and Portuguese) using the **NLLB 3.3B** model.
+
+3.  **Quality Evaluation of Keywords**: The quality of the translated keywords is verified using a back-translation technique. Each translated keyword is back-translated, and its semantic equivalence to the original keyword is checked using the Qwen2.5-14B model. Only high-quality translations are retained for the next step.
+
+4.  **Prompt Engineering**: The validated keywords are used to construct a "medical chain of dictionary" which is then integrated into the input prompts as a structured context. This contextual information helps the LLM better understand the text and improves the quality of the generated summaries.
+
+5.  **Model Fine-tuning**: The study uses **Low-Rank Adaptation (LoRA)**, a parameter-efficient fine-tuning (PEFT) technique, to fine-tune the open-source LLMs. LoRA works by adding a small set of trainable weights while keeping the original model parameters frozen, which reduces computational costs and produces smaller model files. The fine-tuning is performed on the MultiClinSUM training set.
+
+6.  **Evaluation**: Summarization performance is evaluated using **ROUGE-L-Sum** and **BERTScore** metrics. ROUGE-L-Sum measures the longest common subsequence of words to capture sentence-level similarity. BERTScore measures the semantic similarity of generated and reference summaries using contextual embeddings from a pre-trained BERT model.
+
+---
+
+## Key Findings
+- **Improved Performance in Non-English Languages**: MedCOD significantly improves summarization performance in non-English languages, such as Spanish, French, and Portuguese. For example, in Portuguese, the Qwen2.5 model's BERTScore F1 improves from 0.6493 (without MedCOD) to 0.7577 (with MedCOD).
+- **Complementary Roles of Context and Fine-Tuning**: Both the contextual augmentation from MedCOD and fine-tuning individually enhance model performance. However, combining both approaches yields the best results across most non-English tasks, as the context acts as a "language anchor" and reinforces the knowledge learned during fine-tuning.
+- **Performance Saturation in English**: For the English language, which is dominant in most LLM training corpora, models already perform well. Consequently, adding MedCOD context or fine-tuning provides minimal, or even slightly negative, performance gains.
+- **Failure Patterns**: In non-English languages, models often fail by defaulting to generating summaries in English, even when prompted in the target language. The MedCOD framework helps to mitigate these failures by providing target-language keywords as a signal.
+
+---
+
+## Contributions
+- A novel framework, **MedCOD**, that effectively enhances multilingual medical text summarization using keyword-based contextual augmentation.
+- A demonstration that prompt engineering, particularly using a "chain of dictionary" approach, can significantly improve the performance of open-source LLMs in complex, domain-specific tasks for underrepresented languages.
+- An extensive ablation study that systematically analyzes the individual and combined effects of contextual augmentation and fine-tuning on multiple models and languages.
+- The study's findings contribute to a better understanding of the challenges and opportunities in developing equitable and language-inclusive NLP systems for healthcare.
+
+---
+
+## Applications
+- The MedCOD framework can be used to generate accurate and readable summaries of clinical case reports and other medical texts in multiple languages.
+- It has practical applications in patient-facing summaries, discharge summaries, and telemedicine, where clear communication across language barriers is critical.
+- The methodology can be adapted for other multilingual clinical NLP applications, such as translation and information retrieval.
+
+---
+
+## Limitations
+- The MedCOD framework can lead to "COD explosion," where the expanded prompts may overwhelm the model and result in long, disorganized outputs.
+- Due to resource constraints, certain factors remain unexplored, such as the full analysis of discrepancies between ROUGE and BERTScore metrics in some languages.
+- The study's focus on clinical case reports might not generalize perfectly to other types of clinical text, and its effectiveness in other languages has not been fully investigated.
+
+---
+
+## Future Directions
+- Future research should explore strategies to filter and compress prompts to prevent "COD explosion," such as perplexity-guided token selection or keyword salience ranking.
+- The framework could be adapted to use test-time adaptation methods like self-consistency or self-refinement to yield more value in English domains where performance is already saturated.
+- Further analysis is needed to compare monolingual and multilingual fine-tuning setups and to investigate how MedCOD improves content structure and factuality in addition to linguistic consistency.
+- The ultimate goal is to extend this research to other underrepresented languages to develop equitable, multilingual medical summarization systems that are clinically accurate and understandable for diverse patient populations.
+
+---
+
+## Keywords
+- Medical Text Summarization
+- Multilingual NLP
+- Contextual Augmentation
+- Chain of Dictionary
+- Fine-tuning
+- LoRA
+- ROUGE
+- BERTScore
+- Clinical Case Reports
+- Large Language Models (LLMs)
