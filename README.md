@@ -37,8 +37,6 @@ chatbot_main/
 │── papersV2.json         # Paper metadata (titles, IDs, etc.)
 │── paper_text/           # Full text of each paper (referenced by papersV2.json)
 │── README.md             # Documentation
-│── .gitattributes
-│── .git/                 # Git version control
 ```
 
 ---
@@ -78,15 +76,10 @@ CUDA_VISIBLE_DEVICES=4 ~/llama.cpp/build/bin/llama-server \
     --temp 0.7 --top-p 0.9 --top-k 50
 ```
 
-This will expose an **OpenAI-compatible API** at:
-
-```
-http://localhost:8080/v1/chat/completions
-```
-
 ---
 
 ### 4. Expose API with ngrok (for GitHub Pages)
+[Ngrok Official Link](https://ngrok.com/docs)
 
 If you want to use the chatbot online (e.g., from your GitHub Pages site), run:
 
@@ -109,8 +102,6 @@ const API_URL = "https://your-ngrok-domain.ngrok-free.app/v1/chat/completions";
 ---
 
 ### 6. Run locally or deploy
-
-* Local test:
 
 
 Open → [http://localhost:8080/index.html](http://localhost:8080/index.html)
